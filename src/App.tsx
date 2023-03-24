@@ -8,10 +8,7 @@ import {
 import Layout from "./components/Layout"
 import React from "react"
 import { getDesignTokens } from "./styles/theme"
-
-export const ColorModeContext = React.createContext({
-  toggleColorMode: () => {},
-})
+import { ColorModeContext } from "./contexts/commonContexts"
 
 function App() {
   const [mode, setMode] = React.useState<PaletteMode>("dark")
@@ -26,7 +23,6 @@ function App() {
     }),
     []
   )
-
   // Update the theme only if the mode changes
   const theme = React.useMemo(() => createTheme(getDesignTokens(mode)), [mode])
 

@@ -4,6 +4,7 @@ export const getDesignTokens = (mode: PaletteMode): ThemeOptions => {
   return {
     palette: {
       mode,
+      primary: { main: "#03a9f4" },
       ...(mode === "light"
         ? {
             // palette values for light mode

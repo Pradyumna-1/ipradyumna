@@ -5,7 +5,7 @@ import Stack from "@mui/material/Stack"
 import Toolbar from "@mui/material/Toolbar"
 import Typography from "@mui/material/Typography"
 import React from "react"
-
+import WorkTwoToneIcon from "@mui/icons-material/WorkTwoTone"
 import GitHubIcon from "@mui/icons-material/GitHub"
 import LinkedInIcon from "@mui/icons-material/LinkedIn"
 import LightModeIcon from "@mui/icons-material/LightMode"
@@ -16,7 +16,6 @@ import HandymanIcon from "@mui/icons-material/Handyman"
 import PersonIcon from "@mui/icons-material/Person"
 import LayersIcon from "@mui/icons-material/Layers"
 import CallIcon from "@mui/icons-material/Call"
-import { ColorModeContext } from "../App"
 import {
   Box,
   Divider,
@@ -29,6 +28,7 @@ import {
 import { LightTooltip } from "../styles/commom.styles"
 import ListItemIcon from "@mui/material/ListItemIcon"
 import ListItemText from "@mui/material/ListItemText"
+import { ColorModeContext } from "../contexts/commonContexts"
 
 const Layout = () => {
   const drawerWidth = 240
@@ -61,12 +61,13 @@ const Layout = () => {
           >
             <MenuIcon />
           </IconButton>
+          <WorkTwoToneIcon fontSize="large" color="primary" />
           <Typography
             variant="h5"
             fontFamily={"Lucida Handwriting"}
-            // sx={{ display: { xs: "none", sm: "block" } }}
+            color="primary"
           >
-            My Portfolio
+            Portfolio
           </Typography>
           <Stack
             direction={"row"}
@@ -87,17 +88,20 @@ const Layout = () => {
           </Stack>
           <Stack direction={"row"} spacing={1} ml={"auto"}>
             <LightTooltip title="LinkedIn Profile">
-              <IconButton>
+              <IconButton color="primary">
                 <LinkedInIcon />
               </IconButton>
             </LightTooltip>
             <LightTooltip title="Github Profile">
-              <IconButton href="https://github.com/Nilkanth-Patadiya">
+              <IconButton
+                color="primary"
+                href="https://github.com/Nilkanth-Patadiya"
+              >
                 <GitHubIcon />
               </IconButton>
             </LightTooltip>
             <LightTooltip title="Change theme">
-              <IconButton onClick={colorMode.toggleColorMode}>
+              <IconButton color="primary" onClick={colorMode.toggleColorMode}>
                 {theme.palette.mode === "dark" ? (
                   <DarkModeOutlinedIcon />
                 ) : (
@@ -126,18 +130,29 @@ const Layout = () => {
             },
           }}
         >
-          <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-            <List sx={{ width: 1 }}>
-              {navItems.map((item, i) => (
-                <ListItem key={i} disablePadding>
-                  <ListItemButton href={`#${item.toLowerCase()}`}>
-                    <ListItemIcon>{navIcons[i]}</ListItemIcon>
-                    <ListItemText primary={item} />
-                  </ListItemButton>
-                </ListItem>
-              ))}
-            </List>
-          </Box>
+          <Stack
+            spacing={3}
+            sx={{
+              py: 4,
+              px: 2,
+              width: 1,
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            {navItems.map((item, i) => (
+              <Button
+                key={i}
+                onClick={handleDrawerToggle}
+                href={`#${item.toLowerCase()}`}
+                variant="outlined"
+                startIcon={navIcons[i]}
+                sx={{ width: 0.7, borderRadius: 20, py: 1 }}
+              >
+                {item}
+              </Button>
+            ))}
+          </Stack>
         </Drawer>
       </Box>
     </>
