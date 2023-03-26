@@ -16,41 +16,40 @@ import HandymanIcon from "@mui/icons-material/Handyman"
 import PersonIcon from "@mui/icons-material/Person"
 import LayersIcon from "@mui/icons-material/Layers"
 import CallIcon from "@mui/icons-material/Call"
-import {
-  Box,
-  Divider,
-  Drawer,
-  List,
-  ListItem,
-  ListItemButton,
-  useTheme,
-} from "@mui/material"
+import { Box, Container, Drawer, useTheme } from "@mui/material"
 import { LightTooltip } from "../styles/commom.styles"
-import ListItemIcon from "@mui/material/ListItemIcon"
-import ListItemText from "@mui/material/ListItemText"
 import { ColorModeContext } from "../contexts/commonContexts"
+import { useDimensions } from "../hooks/useDimentions"
+import Home from "./Home"
+import Skills from "./Skills"
+import Projects from "./Projects"
+import Contact from "./Contact"
+import About from "./About"
 
 const Layout = () => {
   const drawerWidth = 240
   const navItems = ["Home", "About", "Skills", "Projects", "Contact"]
-  const navIcons = [
-    <HomeIcon />,
-    <PersonIcon />,
-    <HandymanIcon />,
-    <LayersIcon />,
-    <CallIcon />,
-  ]
+  const navIcons = [<HomeIcon />, <PersonIcon />, <HandymanIcon />, <LayersIcon />, <CallIcon />]
 
   const [mobileOpen, setMobileOpen] = React.useState(false)
   const colorMode = React.useContext(ColorModeContext)
   const theme = useTheme()
+  const appBarRef = React.useRef(null)
+  const { height } = useDimensions(appBarRef)
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState)
   }
   return (
     <>
-      <AppBar position="fixed" color="transparent" component="nav">
+      {/* For large screens */}
+      <AppBar
+        position="fixed"
+        color="inherit"
+        component="nav"
+        ref={appBarRef}
+        sx={{ px: { xs: 0, sm: 4 } }}
+      >
         <Toolbar>
           <IconButton
             color="inherit"
@@ -62,19 +61,10 @@ const Layout = () => {
             <MenuIcon />
           </IconButton>
           <WorkTwoToneIcon fontSize="large" color="primary" />
-          <Typography
-            variant="h5"
-            fontFamily={"Lucida Handwriting"}
-            color="primary"
-          >
+          <Typography variant="h5" fontFamily={"Lucida Handwriting"} color="primary">
             Portfolio
           </Typography>
-          <Stack
-            direction={"row"}
-            spacing={1}
-            ml={3}
-            sx={{ display: { xs: "none", sm: "block" } }}
-          >
+          <Stack direction={"row"} spacing={1} ml={3} sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item, index) => (
               <Button
                 key={index}
@@ -93,27 +83,20 @@ const Layout = () => {
               </IconButton>
             </LightTooltip>
             <LightTooltip title="Github Profile">
-              <IconButton
-                color="primary"
-                href="https://github.com/Nilkanth-Patadiya"
-              >
+              <IconButton color="primary" href="https://github.com/Nilkanth-Patadiya">
                 <GitHubIcon />
               </IconButton>
             </LightTooltip>
             <LightTooltip title="Change theme">
               <IconButton color="primary" onClick={colorMode.toggleColorMode}>
-                {theme.palette.mode === "dark" ? (
-                  <DarkModeOutlinedIcon />
-                ) : (
-                  <LightModeIcon />
-                )}
+                {theme.palette.mode === "dark" ? <DarkModeOutlinedIcon /> : <LightModeIcon />}
               </IconButton>
             </LightTooltip>
           </Stack>
         </Toolbar>
       </AppBar>
       <Toolbar id="back-to-top-anchor" />
-
+      {/* For small screens */}
       <Box component="nav">
         <Drawer
           variant="temporary"
@@ -155,6 +138,13 @@ const Layout = () => {
           </Stack>
         </Drawer>
       </Box>
+      <Container fixed>
+        <Home style={{ height: `calc(100vh - ${height}px)` }} />
+        <About style={{ height: `calc(100vh - ${height}px)` }} />
+        <Skills style={{ height: `calc(100vh - ${height}px)` }} />
+        <Projects style={{ height: `calc(100vh - ${height}px)` }} />
+        <Contact style={{ height: `calc(100vh - ${height}px)` }} />
+      </Container>
     </>
   )
 }

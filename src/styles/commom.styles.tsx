@@ -1,4 +1,5 @@
 import { TooltipProps, Tooltip, tooltipClasses, styled } from "@mui/material"
+import { CSSProperties } from "@mui/styled-engine"
 
 export const LightTooltip = styled(({ className, ...props }: TooltipProps) => (
   <Tooltip {...props} classes={{ popper: className }} />
