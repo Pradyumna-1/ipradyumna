@@ -16,7 +16,8 @@ import HandymanIcon from "@mui/icons-material/Handyman"
 import PersonIcon from "@mui/icons-material/Person"
 import LayersIcon from "@mui/icons-material/Layers"
 import CallIcon from "@mui/icons-material/Call"
-import { Box, Container, Drawer, useTheme } from "@mui/material"
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp"
+import { Box, Container, Drawer, Fab, useTheme } from "@mui/material"
 import { LightTooltip } from "../styles/commom.styles"
 import { ColorModeContext } from "../contexts/commonContexts"
 import { useDimensions } from "../hooks/useDimentions"
@@ -25,6 +26,7 @@ import Skills from "./Skills"
 import Projects from "./Projects"
 import Contact from "./Contact"
 import About from "./About"
+import ScrollToTop from "./ScrollToTop"
 
 const Layout = () => {
   const drawerWidth = 240
@@ -145,6 +147,11 @@ const Layout = () => {
         <Projects style={{ height: `calc(100vh - ${height}px)` }} />
         <Contact style={{ height: `calc(100vh - ${height}px)` }} />
       </Container>
+      <ScrollToTop>
+        <Fab size="medium" aria-label="scroll back to top" color="primary">
+          <KeyboardArrowUpIcon />
+        </Fab>
+      </ScrollToTop>
     </>
   )
 }
