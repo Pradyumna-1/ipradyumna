@@ -1,10 +1,10 @@
 import { Avatar, Typography } from "@mui/material"
 import Grid from "@mui/material/Grid"
-import { componentProps } from "../App.props"
+import { CommonProps } from "../App.props"
 
-const Home = ({ style }: componentProps) => {
+const Home = ({ style, navID }: CommonProps) => {
   return (
-    <section id="home">
+    <section id={navID}>
       <Grid container alignItems={"center"} sx={{ ...style }}>
         <Grid item sm p={2} sx={{ textAlign: { xs: "center", sm: "right" } }}>
           <Typography variant="h3" color={"text.secondary"}>

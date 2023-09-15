@@ -18,8 +18,7 @@ import LayersIcon from "@mui/icons-material/Layers"
 import CallIcon from "@mui/icons-material/Call"
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp"
 import { Box, Container, Drawer, Fab, useTheme } from "@mui/material"
-import { LightTooltip } from "../styles/commom.styles"
-import { ColorModeContext } from "../contexts/commonContexts"
+import { LightTooltip } from "../styles/styledComponents"
 import { useDimensions } from "../hooks/useDimentions"
 import Home from "./Home"
 import Skills from "./Skills"
@@ -27,30 +26,31 @@ import Projects from "./Projects"
 import Contact from "./Contact"
 import About from "./About"
 import ScrollToTop from "./ScrollToTop"
+import { navItems, drawerWidth } from "../utils/constants"
+import { useColorMode } from "../providers/ColorModeProvider"
 
 const Layout = () => {
-  const drawerWidth = 240
-  const navItems = ["Home", "About", "Skills", "Projects", "Contact"]
   const navIcons = [<HomeIcon />, <PersonIcon />, <HandymanIcon />, <LayersIcon />, <CallIcon />]
 
   const [mobileOpen, setMobileOpen] = React.useState(false)
-  const colorMode = React.useContext(ColorModeContext)
+  const { toggleColorMode } = useColorMode()
   const theme = useTheme()
   const appBarRef = React.useRef(null)
   const { height } = useDimensions(appBarRef)
+  const secHeight = `calc(100vh - ${height}px)`
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState)
   }
   return (
     <>
-      {/* For large screens */}
+      {/* Navigation For large screens */}
       <AppBar
         position="fixed"
         color="inherit"
         component="nav"
         ref={appBarRef}
-        sx={{ px: { xs: 0, sm: 4 } }}
+        sx={{ px: { xs: 0, md: 4 } }}
       >
         <Toolbar>
           <IconButton
@@ -58,7 +58,7 @@ const Layout = () => {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
+            sx={{ mr: 2, display: { md: "none" } }}
           >
             <MenuIcon />
           </IconButton>
@@ -66,14 +66,14 @@ const Layout = () => {
           <Typography variant="h5" fontFamily={"Lucida Handwriting"} color="primary">
             Portfolio
           </Typography>
-          <Stack direction={"row"} spacing={1} ml={3} sx={{ display: { xs: "none", sm: "block" } }}>
+          <Stack
+            direction={"row"}
+            spacing={1}
+            ml={3}
+            sx={{ display: { xs: "none", md: "initial" } }}
+          >
             {navItems.map((item, index) => (
-              <Button
-                key={index}
-                color="inherit"
-                href={`#${item.toLowerCase()}`}
-                sx={{ fontSize: "1rem" }}
-              >
+              <Button key={index} color="inherit" href={`#${item}`} sx={{ fontSize: "1rem" }}>
                 {item}
               </Button>
             ))}
@@ -90,7 +90,7 @@ const Layout = () => {
               </IconButton>
             </LightTooltip>
             <LightTooltip title="Change theme">
-              <IconButton color="primary" onClick={colorMode.toggleColorMode}>
+              <IconButton color="primary" onClick={toggleColorMode}>
                 {theme.palette.mode === "dark" ? <DarkModeOutlinedIcon /> : <LightModeIcon />}
               </IconButton>
             </LightTooltip>
@@ -98,7 +98,7 @@ const Layout = () => {
         </Toolbar>
       </AppBar>
       <Toolbar id="back-to-top-anchor" />
-      {/* For small screens */}
+      {/*Navigation For small screens */}
       <Box component="nav">
         <Drawer
           variant="temporary"
@@ -108,7 +108,7 @@ const Layout = () => {
             keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
-            display: { xs: "block", sm: "none" },
+            display: { xs: "initial", md: "none" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,
@@ -141,11 +141,11 @@ const Layout = () => {
         </Drawer>
       </Box>
       <Container fixed>
-        <Home style={{ height: `calc(100vh - ${height}px)` }} />
-        <About style={{ height: `calc(100vh - ${height}px)` }} />
-        <Skills style={{ height: `calc(100vh - ${height}px)` }} />
-        <Projects style={{ height: `calc(100vh - ${height}px)` }} />
-        <Contact style={{ height: `calc(100vh - ${height}px)` }} />
+        <Home style={{ height: secHeight }} navID={navItems[0]} />
+        <About style={{ height: secHeight }} navID={navItems[1]} />
+        <Skills style={{ height: secHeight }} navID={navItems[2]} />
+        <Projects style={{ height: secHeight }} navID={navItems[3]} />
+        <Contact style={{ height: secHeight }} navID={navItems[4]} />
       </Container>
       <ScrollToTop>
         <Fab size="medium" aria-label="scroll back to top" color="primary">
