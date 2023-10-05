@@ -26,7 +26,7 @@ export const getDesignTokens = (mode: PaletteMode): ThemeOptions => {
           }),
     },
     typography: {
-      fontFamily: "Graphik",
+      fontFamily: "Poppins",
       h1: {
         fontWeight: 700,
       },

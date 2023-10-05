@@ -141,11 +141,11 @@ const Layout = () => {
         </Drawer>
       </Box>
       <Container fixed>
-        <Home style={{ height: secHeight }} navID={navItems[0]} />
-        <About style={{ height: secHeight }} navID={navItems[1]} />
-        <Skills style={{ height: secHeight }} navID={navItems[2]} />
-        <Projects style={{ height: secHeight }} navID={navItems[3]} />
-        <Contact style={{ height: secHeight }} navID={navItems[4]} />
+        <Home style={{ minHeight: secHeight }} navID={navItems[0]} />
+        <About style={{ minHeight: secHeight }} navID={navItems[1]} />
+        <Skills style={{ minHeight: secHeight }} navID={navItems[2]} />
+        <Projects style={{ minHeight: secHeight }} navID={navItems[3]} />
+        <Contact style={{ minHeight: secHeight }} navID={navItems[4]} />
       </Container>
       <ScrollToTop>
         <Fab size="medium" aria-label="scroll back to top" color="primary">

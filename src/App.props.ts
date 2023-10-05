@@ -9,3 +9,8 @@ export interface ColorModeProviderProps {
   mode: PaletteMode
   toggleColorMode: () => void
 }
+
+export interface Skill {
+  name: string
+  imgURL: string
+}
