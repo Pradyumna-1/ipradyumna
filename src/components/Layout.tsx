@@ -80,12 +80,22 @@ const Layout = () => {
           </Stack>
           <Stack direction={"row"} spacing={1} ml={"auto"}>
             <LightTooltip title="LinkedIn Profile">
-              <IconButton color="primary">
+              <IconButton
+                color="primary"
+                target="_blank"
+                rel="noopener"
+                href="https://www.linkedin.com/in/nilkanthpatadiya/"
+              >
                 <LinkedInIcon />
               </IconButton>
             </LightTooltip>
             <LightTooltip title="Github Profile">
-              <IconButton color="primary" href="https://github.com/Nilkanth-Patadiya">
+              <IconButton
+                color="primary"
+                href="https://github.com/Nilkanth-Patadiya"
+                target="_blank"
+                rel="noopener"
+              >
                 <GitHubIcon />
               </IconButton>
             </LightTooltip>
@@ -141,11 +151,11 @@ const Layout = () => {
         </Drawer>
       </Box>
       <Container fixed>
-        <Home style={{ minHeight: secHeight }} navID={navItems[0]} />
-        <About style={{ minHeight: secHeight }} navID={navItems[1]} />
-        <Skills style={{ minHeight: secHeight }} navID={navItems[2]} />
-        <Projects style={{ minHeight: secHeight }} navID={navItems[3]} />
-        <Contact style={{ minHeight: secHeight }} navID={navItems[4]} />
+        <Home secHeight={secHeight} navID={navItems[0]} />
+        <About secHeight={secHeight} navID={navItems[1]} />
+        <Skills secHeight={secHeight} navID={navItems[2]} />
+        <Projects secHeight={secHeight} navID={navItems[3]} />
+        <Contact secHeight={secHeight} navID={navItems[4]} />
       </Container>
       <ScrollToTop>
         <Fab size="medium" aria-label="scroll back to top" color="primary">

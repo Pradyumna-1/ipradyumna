@@ -1,7 +1,7 @@
-import { PaletteMode, SxProps, Theme } from "@mui/material"
+import { PaletteMode } from "@mui/material"
 
 export interface CommonProps {
-  style?: SxProps<Theme>
+  secHeight: string
   navID: string
 }
 
