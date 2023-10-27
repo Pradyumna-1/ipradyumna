@@ -30,7 +30,13 @@ import { navItems, drawerWidth } from "../utils/constants"
 import { useColorMode } from "../providers/ColorModeProvider"
 
 const Layout = () => {
-  const navIcons = [<HomeIcon />, <PersonIcon />, <HandymanIcon />, <LayersIcon />, <CallIcon />]
+  const navIcons = [
+    <HomeIcon />,
+    <PersonIcon />,
+    <HandymanIcon />,
+    <LayersIcon />,
+    <CallIcon />,
+  ]
 
   const [mobileOpen, setMobileOpen] = React.useState(false)
   const { toggleColorMode } = useColorMode()
@@ -47,10 +53,10 @@ const Layout = () => {
       {/* Navigation For large screens */}
       <AppBar
         position="fixed"
-        color="inherit"
+        color="transparent"
         component="nav"
         ref={appBarRef}
-        sx={{ px: { xs: 0, md: 4 } }}
+        sx={{ px: { xs: 0, md: 4 }, backdropFilter: "blur(14px)" }}
       >
         <Toolbar>
           <IconButton
@@ -63,7 +69,11 @@ const Layout = () => {
             <MenuIcon />
           </IconButton>
           <WorkTwoToneIcon fontSize="large" color="primary" />
-          <Typography variant="h5" fontFamily={"Lucida Handwriting"} color="primary">
+          <Typography
+            variant="h5"
+            fontFamily={"Lucida Handwriting"}
+            color="primary"
+          >
             Portfolio
           </Typography>
           <Stack
@@ -73,7 +83,12 @@ const Layout = () => {
             sx={{ display: { xs: "none", md: "initial" } }}
           >
             {navItems.map((item, index) => (
-              <Button key={index} color="inherit" href={`#${item}`} sx={{ fontSize: "1rem" }}>
+              <Button
+                key={index}
+                color="inherit"
+                href={`#${item}`}
+                sx={{ fontSize: "1rem" }}
+              >
                 {item}
               </Button>
             ))}
@@ -101,7 +116,11 @@ const Layout = () => {
             </LightTooltip>
             <LightTooltip title="Change theme">
               <IconButton color="primary" onClick={toggleColorMode}>
-                {theme.palette.mode === "dark" ? <DarkModeOutlinedIcon /> : <LightModeIcon />}
+                {theme.palette.mode === "dark" ? (
+                  <DarkModeOutlinedIcon />
+                ) : (
+                  <LightModeIcon />
+                )}
               </IconButton>
             </LightTooltip>
           </Stack>
