@@ -1,19 +1,27 @@
-import { Avatar, Typography } from "@mui/material"
+import { Avatar, Box, Typography } from "@mui/material"
 import Grid from "@mui/material/Grid"
 import { CommonProps } from "../App.props"
 
 const Home = ({ secHeight, navID }: CommonProps) => {
   return (
     <section id={navID}>
-      <Grid container alignItems={"center"} sx={{ minHeight: secHeight }}>
+      <Grid
+        container
+        alignItems={"center"}
+        sx={{
+          minHeight: secHeight,
+          flexDirection: { xs: "column-reverse", sm: "row" },
+        }}
+      >
         <Grid
           item
-          sm
+          sm={6}
           p={2}
           sx={{
             display: "flex",
             alignItems: "center",
-            justifyContent: "flex-end",
+            justifyContent: { xs: "center", sm: "flex-end" },
+            textAlign: { xs: "center", sm: "initial" },
           }}
         >
           <div>
@@ -44,28 +52,42 @@ const Home = ({ secHeight, navID }: CommonProps) => {
         </Grid>
         <Grid
           item
-          sm
+          sm={6}
           p={2}
           sx={{
-            order: { xs: -1, sm: 0 },
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
           }}
         >
-          <Avatar
-            alt="Nilkanth Patadiya"
-            src="/profile-pic.jpg"
+          <Box
             sx={{
-              width: 280,
-              height: 280,
-              background:
-                "linear-gradient(white, white) padding-box, linear-gradient(to right, #E70FAA, #00C0FD) border-box",
+              position: "relative",
+              width: { xs: 180, md: 280 },
+              height: { xs: 180, md: 280 },
               borderRadius: "50%",
-              border: "7px solid transparent",
-              "&::after": { filter: "blur(20px)" },
+              "&::before,&::after": {
+                content: '" "',
+                position: "absolute",
+                inset: "-10px",
+                borderRadius: "inherit",
+                background: "linear-gradient(#00C0FD, #E70FAA)",
+                zIndex: -1,
+              },
+              "&::after": { filter: "blur(16px)" },
             }}
-          ></Avatar>
+          >
+            <Avatar
+              alt="Nilkanth Patadiya"
+              src="/profile-pic.jpg"
+              sx={{
+                width: 1,
+                height: 1,
+                borderRadius: "50%",
+                objectFit: "fill",
+              }}
+            ></Avatar>
+          </Box>
         </Grid>
       </Grid>
     </section>

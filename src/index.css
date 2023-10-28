@@ -3,7 +3,7 @@ section {
 }
 
 .gradientName {
-  background: -webkit-linear-gradient(#00C0FD, #E70FAA);
+  background: -webkit-linear-gradient(90deg, #00C0FD, #E70FAA);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

@@ -6,7 +6,7 @@ import MotionStack from "./MotionStack"
 const Skills = ({ secHeight, navID }: CommonProps) => {
   return (
     <section id={navID} style={{ minHeight: secHeight }}>
-      <Grid container rowSpacing={3} columnSpacing={2}>
+      <Grid container rowSpacing={3} columnSpacing={2} alignContent={"center"}>
         <Grid item xs={12} my={3}>
           <Typography variant="h3" textAlign={"center"}>
             My Skills
@@ -23,6 +23,7 @@ const Skills = ({ secHeight, navID }: CommonProps) => {
                 transition: { duration: 0.3 },
               }}
               whileInView={{ opacity: 1, y: 0, transition: { delay: i * 0.2 } }}
+              viewport={{ once: true }}
             >
               <Box
                 sx={{

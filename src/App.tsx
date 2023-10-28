@@ -1,4 +1,9 @@
-import { createTheme, CssBaseline, ThemeProvider } from "@mui/material"
+import {
+  createTheme,
+  CssBaseline,
+  responsiveFontSizes,
+  ThemeProvider,
+} from "@mui/material"
 
 import Layout from "./components/Layout"
 import React from "react"
@@ -8,8 +13,8 @@ import { useColorMode } from "./providers/ColorModeProvider"
 function App() {
   const { mode } = useColorMode()
   // Update the theme only if the mode changes
-  const theme = React.useMemo(() => createTheme(getDesignTokens(mode)), [mode])
-
+  let theme = React.useMemo(() => createTheme(getDesignTokens(mode)), [mode])
+  theme = responsiveFontSizes(theme)
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline enableColorScheme />
