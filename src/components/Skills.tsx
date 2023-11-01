@@ -5,51 +5,57 @@ import MotionStack from "./MotionStack"
 
 const Skills = ({ secHeight, navID }: CommonProps) => {
   return (
-    <section id={navID} style={{ minHeight: secHeight }}>
-      <Grid container rowSpacing={3} columnSpacing={2} alignContent={"center"}>
-        <Grid item xs={12} my={3}>
+    <section id={navID}>
+      <Grid container sx={{ minHeight: secHeight }}>
+        <Grid item xs={12} my={2}>
           <Typography variant="h3" textAlign={"center"}>
             My Skills
           </Typography>
         </Grid>
-        {skillData?.map(({ name, imgURL }, i) => (
-          <Grid item key={name} xs={6} sm={4} md={3} lg={2}>
-            <MotionStack
-              gap={1}
-              sx={{ height: 1 }}
-              initial={{ opacity: 0, y: 20 }}
-              whileHover={{
-                scale: 1.05,
-                transition: { duration: 0.3 },
-              }}
-              whileInView={{ opacity: 1, y: 0, transition: { delay: i * 0.2 } }}
-              viewport={{ once: true }}
-            >
-              <Box
-                sx={{
-                  height: 80,
-                  width: 1,
-                  display: "flex",
-                  justifyContent: "center",
+        <Grid item container spacing={3}>
+          {skillData?.map(({ name, imgURL }, i) => (
+            <Grid item key={name} xs={6} sm={4} md={3} lg={2}>
+              <MotionStack
+                gap={1}
+                sx={{ height: 1 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileHover={{
+                  scale: 1.05,
+                  transition: { duration: 0.3 },
                 }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                  transition: { delay: i * 0.2 },
+                }}
+                viewport={{ once: true }}
               >
                 <Box
-                  component={"img"}
                   sx={{
-                    maxInlineSize: "80%",
-                    blockSize: "auto",
-                    objectFit: "contain",
+                    height: 80,
+                    width: 1,
+                    display: "flex",
+                    justifyContent: "center",
                   }}
-                  src={imgURL}
-                  alt={name}
-                />
-              </Box>
-              <Typography variant="h6" textAlign={"center"}>
-                {name}
-              </Typography>
-            </MotionStack>
-          </Grid>
-        ))}
+                >
+                  <Box
+                    component={"img"}
+                    sx={{
+                      maxInlineSize: "80%",
+                      blockSize: "auto",
+                      objectFit: "contain",
+                    }}
+                    src={imgURL}
+                    alt={name}
+                  />
+                </Box>
+                <Typography variant="h6" textAlign={"center"}>
+                  {name}
+                </Typography>
+              </MotionStack>
+            </Grid>
+          ))}
+        </Grid>
       </Grid>
     </section>
   )

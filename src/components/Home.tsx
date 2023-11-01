@@ -16,7 +16,6 @@ const Home = ({ secHeight, navID }: CommonProps) => {
         <Grid
           item
           sm={6}
-          p={2}
           sx={{
             display: "flex",
             alignItems: "center",
@@ -53,7 +52,6 @@ const Home = ({ secHeight, navID }: CommonProps) => {
         <Grid
           item
           sm={6}
-          p={2}
           sx={{
             display: "flex",
             alignItems: "center",

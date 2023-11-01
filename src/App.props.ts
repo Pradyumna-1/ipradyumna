@@ -14,3 +14,9 @@ export interface Skill {
   name: string
   imgURL: string
 }
+export interface Project {
+  name: string
+  description: string
+  projectURL: string
+  githubURL: string
+}

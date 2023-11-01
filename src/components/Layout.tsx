@@ -26,7 +26,12 @@ import Projects from "./Projects"
 import Contact from "./Contact"
 import About from "./About"
 import ScrollToTop from "./ScrollToTop"
-import { navItems, drawerWidth } from "../utils/constants"
+import {
+  navItems,
+  drawerWidth,
+  linkedInProfile,
+  githubProfile,
+} from "../utils/constants"
 import { useColorMode } from "../providers/ColorModeProvider"
 
 const Layout = () => {
@@ -99,7 +104,7 @@ const Layout = () => {
                 color="primary"
                 target="_blank"
                 rel="noopener"
-                href="https://www.linkedin.com/in/nilkanthpatadiya/"
+                href={linkedInProfile}
               >
                 <LinkedInIcon />
               </IconButton>
@@ -107,7 +112,7 @@ const Layout = () => {
             <LightTooltip title="Github Profile">
               <IconButton
                 color="primary"
-                href="https://github.com/Nilkanth-Patadiya"
+                href={githubProfile}
                 target="_blank"
                 rel="noopener"
               >
