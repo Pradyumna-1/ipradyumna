@@ -7,7 +7,6 @@ const Home = ({ secHeight, navID }: CommonProps) => {
     <section id={navID}>
       <Grid
         container
-        alignItems={"center"}
         sx={{
           minHeight: secHeight,
           flexDirection: { xs: "column-reverse", sm: "row" },

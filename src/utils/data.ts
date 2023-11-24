@@ -20,21 +20,21 @@ export const projectData: Project[] = [
   {
     name: "Portfolio Website",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in tincidunt metus. Duis accumsan nibh risus, vel ornare odio ultrices ut. Suspendisse egestas elit congue dolor eleifend mollis. Donec dapibus, turpis eu malesuada ullamcorper, justo purus ullamcorper ipsum, eget aliquet nibh augue ut lectus.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in tincidunt metus. Duis accumsan nibh risus, vel ornare odio ultrices ut. Suspendisse egestas elit congue dolor eleifend mollis. Donec dapibus, turpis eu malesuada ullamcorper.",
     projectURL: "https://vercel.com/",
     githubURL: githubProfile,
   },
   {
     name: "Pokedex App",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in tincidunt metus. Duis accumsan nibh risus, vel ornare odio ultrices ut. Suspendisse egestas elit congue dolor eleifend mollis. Donec dapibus, turpis eu malesuada ullamcorper, justo purus ullamcorper ipsum, eget aliquet nibh augue ut lectus.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in tincidunt metus. Duis accumsan nibh risus, vel ornare odio ultrices ut. Suspendisse egestas elit congue dolor eleifend mollis. Donec dapibus, turpis eu malesuada ullamcorper.",
     projectURL: "https://vercel.com/",
     githubURL: githubProfile,
   },
   {
     name: "Pizzeria App",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in tincidunt metus. Duis accumsan nibh risus, vel ornare odio ultrices ut. Suspendisse egestas elit congue dolor eleifend mollis. Donec dapibus, turpis eu malesuada ullamcorper, justo purus ullamcorper ipsum, eget aliquet nibh augue ut lectus.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in tincidunt metus. Duis accumsan nibh risus, vel ornare odio ultrices ut. Suspendisse egestas elit congue dolor eleifend mollis. Donec dapibus, turpis eu malesuada ullamcorper.",
     projectURL: "https://vercel.com/",
     githubURL: githubProfile,
   },

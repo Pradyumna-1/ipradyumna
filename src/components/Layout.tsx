@@ -48,7 +48,7 @@ const Layout = () => {
   const theme = useTheme()
   const appBarRef = React.useRef(null)
   const { height } = useDimensions(appBarRef)
-  const secHeight = `calc(100vh - ${height}px)`
+  const secHeight = React.useMemo(() => `calc(100vh - ${height}px)`, [height])
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState)
@@ -79,7 +79,7 @@ const Layout = () => {
             fontFamily={"Lucida Handwriting"}
             color="primary"
           >
-            Portfolio
+            &lt;nilkanth /&gt;
           </Typography>
           <Stack
             direction={"row"}
@@ -174,7 +174,7 @@ const Layout = () => {
           </Stack>
         </Drawer>
       </Box>
-      <Container fixed>
+      <Container sx={{ "&>section": { scrollMarginTop: `${height}px` } }}>
         <Home secHeight={secHeight} navID={navItems[0]} />
         <About secHeight={secHeight} navID={navItems[1]} />
         <Skills secHeight={secHeight} navID={navItems[2]} />

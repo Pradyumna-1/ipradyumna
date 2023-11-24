@@ -43,7 +43,7 @@ export const getDesignTokens = (mode: PaletteMode): ThemeOptions => {
         fontWeight: 700,
       },
       h6: {
-        fontWeight: 700,
+        fontWeight: 600,
       },
     },
     components: {

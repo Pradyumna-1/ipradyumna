@@ -13,22 +13,22 @@ import OpenInNewIcon from "@mui/icons-material/OpenInNew"
 const Projects = ({ secHeight, navID }: CommonProps) => {
   return (
     <section id={navID}>
-      <Grid container alignItems={"center"} sx={{ minHeight: secHeight }}>
+      <Grid container sx={{ minHeight: secHeight }}>
         <Grid item xs={12} my={2}>
-          <Typography variant="h3" textAlign={"center"}>
+          <Typography variant="h4" textAlign={"center"}>
             Personal Projects
           </Typography>
         </Grid>
-        <Grid item container spacing={4}>
+        <Grid item container spacing={5}>
           {projectData?.map(({ name, description, githubURL, projectURL }) => (
             <Grid item key={name} xs={12} sm={6} md={4}>
               <Card>
                 <CardMedia
-                  sx={{ height: 180 }}
+                  sx={{ height: 160 }}
                   image="/Rectangle.png"
                   title="green iguana"
                 />
-                <CardContent>
+                <CardContent sx={{ pb: 0 }}>
                   <Typography gutterBottom variant="h6">
                     {name}
                   </Typography>

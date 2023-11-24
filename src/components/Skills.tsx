@@ -6,13 +6,13 @@ import MotionStack from "./MotionStack"
 const Skills = ({ secHeight, navID }: CommonProps) => {
   return (
     <section id={navID}>
-      <Grid container sx={{ minHeight: secHeight }}>
-        <Grid item xs={12} my={2}>
-          <Typography variant="h3" textAlign={"center"}>
+      <Grid container sx={{ minHeight: secHeight, alignItems: "flex-start" }}>
+        <Grid item xs={12} my={3}>
+          <Typography variant="h4" textAlign={"center"}>
             My Skills
           </Typography>
         </Grid>
-        <Grid item container spacing={3}>
+        <Grid item container spacing={3} flexGrow={1}>
           {skillData?.map(({ name, imgURL }, i) => (
             <Grid item key={name} xs={6} sm={4} md={3} lg={2}>
               <MotionStack
