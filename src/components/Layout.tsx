@@ -33,6 +33,7 @@ import {
   githubProfile,
 } from "../utils/constants"
 import { useColorMode } from "../providers/ColorModeProvider"
+import Footer from "./Footer"
 
 const Layout = () => {
   const navIcons = [
@@ -180,6 +181,7 @@ const Layout = () => {
         <Skills secHeight={secHeight} navID={navItems[2]} />
         <Projects secHeight={secHeight} navID={navItems[3]} />
         <Contact secHeight={secHeight} navID={navItems[4]} />
+        <Footer />
       </Container>
       <ScrollToTop>
         <Fab size="medium" aria-label="scroll back to top" color="primary">
