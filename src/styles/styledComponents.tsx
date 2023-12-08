@@ -21,3 +21,8 @@ export const CustomAvatar = styled(Avatar)(({ theme }) => ({
   width: "50px",
   height: "50px",
 }))
+
+export const BlueSpan = styled("span")(({ theme }) => ({
+  color: theme.palette.primary.main,
+  fontWeight: 600,
+}))

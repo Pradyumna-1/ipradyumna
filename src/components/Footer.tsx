@@ -1,6 +1,6 @@
-import Link from "@mui/material/Link"
 import Typography from "@mui/material/Typography"
 import Divider from "@mui/material/Divider"
+import { BlueSpan } from "../styles/styledComponents"
 
 const Footer = () => {
   return (
@@ -11,7 +11,7 @@ const Footer = () => {
         textAlign={"center"}
         sx={{ textShadow: "1px 1px black", p: 2 }}
       >
-        Made with &#x1F496; by <Link underline="none">Nilkanth Patadiya</Link>
+        Made with &#x1F496; by <BlueSpan>Nilkanth Patadiya</BlueSpan>
       </Typography>
     </footer>
   )

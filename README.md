@@ -1,6 +1,6 @@
-<h1 align="center">Pizzeria | MEAN Web App</h1>
+<h1 align="center">Portfolio Website</h1>
 
-<p> This is a MEAN Stack Web Application Project , Created For Learning & Demo Purposes.</p>
+<p> This is my personal portfolio website built using react and typescript.</p>
 
 ## 📝 Table of Contents
 
@@ -11,14 +11,10 @@
 
 ## 🧐 About <a name = "about"></a>
 
-- Pizzeria is a **MEAN Stack** web application where users book pizza online.
-- The Pizzeria home page provides an
-  overview of the organization.
-- The Users can choose from the existing menu and
-  order pizzas.
-- The Users can also customize their pizza by
-  choosing ingredients.
-- The Shopping Cart page provides an overview of the order.
+- My personal portfolio which features some of my github projects as well.
+- It supports both dark and light mode.
+- It is fully responsive & user friendly website.
+- It has five sections like Home, About, Skills, Projects & Contact.
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
@@ -26,10 +22,10 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### **Prerequisites** :
 
-Make sure you have installed all of the following prerequisites on your development machine:
+Make sure you have installed all of the following prerequisites on your machine:
 
 - Git - [Download & Install Git](https://git-scm.com/downloads), OSX and Linux machines typically have this already installed.
-- Node.js - [Download & Install Node.js](https://nodejs.org/en/download/) and the npm package manager. If you encounter any problems, you can also use this [GitHub Gist](https://gist.github.com/isaacs/579814) to install Node.js.
+- Node.js - [Download & Install Node.js](https://nodejs.org/en/download/) and the npm package manager.
 
 ### **Starting React Dev Server** :
 
@@ -55,16 +51,17 @@ Make sure you have installed all of the following prerequisites on your developm
    npm run dev
    ```
 
-   The application should then run successfully and you should see message like **" VITE v4.4.9 ready in 615 ms Local: http://localhost:5173/"**.
+   The application should then run successfully and you should see a message like **" VITE v4.x.x ready in xxx ms Local: http://localhost:5173/"**.
 
-5. Congratulations now you have a working pizza app, Bravo!!
+5. Open http://localhost:5173 to view it in the browser.
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
 - [React](https://react.dev/) - User Interface (UI) library
 - [Typescript](https://www.typescriptlang.org/) - Strongly typed programming language
-- [Material UI](https://mui.com/material-ui/) - React component library
+- [Material UI](https://mui.com/material-ui/) - React UI component library
 - [Material Icons](https://mui.com/material-ui/material-icons/) - Icons library
+- [Framer Motion](https://www.framer.com/motion/) - An animation & gesture library
 
 ## ✍️ Authors <a name = "authors"></a>
 

@@ -5,26 +5,27 @@ import {
   ListItemAvatar,
   ListItemText,
   Typography,
-  Link,
 } from "@mui/material"
 import { CommonProps } from "../App.props"
 import LinkedInIcon from "@mui/icons-material/LinkedIn"
 import LocationOnIcon from "@mui/icons-material/LocationOn"
 import EmailIcon from "@mui/icons-material/Email"
 import { emailID, linkedInProfile, myAddress } from "../utils/constants"
-import { CustomAvatar } from "../styles/styledComponents"
+import { BlueSpan, CustomAvatar } from "../styles/styledComponents"
 const Contact = ({ secHeight, navID }: CommonProps) => {
   return (
     <section id={navID}>
       <Grid container sx={{ minHeight: secHeight, alignContent: "flex-start" }}>
         <Grid item xs={12} py={3} textAlign={"center"}>
-          <Typography variant="h4">Let's Get In Touch</Typography>
+          <Typography variant="h4">
+            Let's Get <BlueSpan>In Touch</BlueSpan>
+          </Typography>
           <Typography mt={1}>
-            Have a <Link underline="none">Question</Link> on your mind??
+            Have a <BlueSpan>Question</BlueSpan> on your mind??
           </Typography>
           <Typography>
-            Or want a copy of my <Link underline="none">résumé</Link>? Contact
-            me using below links.
+            Or want a copy of my <BlueSpan>résumé</BlueSpan>? Contact me using
+            below links.
           </Typography>
         </Grid>
         <Grid item container alignItems={"center"} justifyContent={"center"}>
@@ -48,7 +49,7 @@ const Contact = ({ secHeight, navID }: CommonProps) => {
                 </ListItemAvatar>
                 <ListItemText
                   primaryTypographyProps={{ pl: 2, variant: "h6" }}
-                  primary={emailID}
+                  primary={"Send an Email"}
                 />
               </ListItemButton>
               <ListItemButton
@@ -71,7 +72,7 @@ const Contact = ({ secHeight, navID }: CommonProps) => {
                 </ListItemAvatar>
                 <ListItemText
                   primaryTypographyProps={{ pl: 2, variant: "h6" }}
-                  primary="LinkedIn Profile"
+                  primary="Ping me on LinkedIn"
                 />
               </ListItemButton>
               <ListItemButton

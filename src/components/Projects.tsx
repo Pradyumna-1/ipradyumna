@@ -1,6 +1,5 @@
 import { Grid, Typography } from "@mui/material"
 import { CommonProps } from "../App.props"
-import * as React from "react"
 import Card from "@mui/material/Card"
 import CardActions from "@mui/material/CardActions"
 import CardContent from "@mui/material/CardContent"
@@ -13,7 +12,7 @@ import OpenInNewIcon from "@mui/icons-material/OpenInNew"
 const Projects = ({ secHeight, navID }: CommonProps) => {
   return (
     <section id={navID}>
-      <Grid container sx={{ minHeight: secHeight }}>
+      <Grid container sx={{ minHeight: secHeight, alignContent: "flex-start" }}>
         <Grid item xs={12} my={2}>
           <Typography variant="h4" textAlign={"center"}>
             Personal Projects
@@ -22,7 +21,14 @@ const Projects = ({ secHeight, navID }: CommonProps) => {
         <Grid item container spacing={5}>
           {projectData?.map(({ name, description, githubURL, projectURL }) => (
             <Grid item key={name} xs={12} sm={6} md={4}>
-              <Card>
+              <Card
+                sx={{
+                  "&:hover": {
+                    boxShadow: "0px 0px 5px 5px #3ea6ff",
+                    transform: "scale(1.03)",
+                  },
+                }}
+              >
                 <CardMedia
                   sx={{ height: 160 }}
                   image="/Rectangle.png"
