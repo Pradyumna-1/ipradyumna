@@ -5,7 +5,7 @@ import Stack from "@mui/material/Stack"
 import Toolbar from "@mui/material/Toolbar"
 import Typography from "@mui/material/Typography"
 import React from "react"
-import WorkTwoToneIcon from "@mui/icons-material/WorkTwoTone"
+import LaptopWindowsTwoToneIcon from "@mui/icons-material/LaptopWindowsTwoTone"
 import GitHubIcon from "@mui/icons-material/GitHub"
 import LinkedInIcon from "@mui/icons-material/LinkedIn"
 import LightModeIcon from "@mui/icons-material/LightMode"
@@ -74,7 +74,7 @@ const Layout = () => {
           >
             <MenuIcon />
           </IconButton>
-          <WorkTwoToneIcon fontSize="large" color="primary" />
+          <LaptopWindowsTwoToneIcon fontSize="large" color="primary" />
           <Typography
             variant="h5"
             fontFamily={"Lucida Handwriting"}

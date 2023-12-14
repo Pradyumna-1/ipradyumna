@@ -8,6 +8,7 @@ import Button from "@mui/material/Button"
 import { projectData } from "../utils/data"
 import GitHubIcon from "@mui/icons-material/GitHub"
 import OpenInNewIcon from "@mui/icons-material/OpenInNew"
+import { BlueSpan } from "../styles/styledComponents"
 
 const Projects = ({ secHeight, navID }: CommonProps) => {
   return (
@@ -15,7 +16,7 @@ const Projects = ({ secHeight, navID }: CommonProps) => {
       <Grid container sx={{ minHeight: secHeight, alignContent: "flex-start" }}>
         <Grid item xs={12} my={2}>
           <Typography variant="h4" textAlign={"center"}>
-            Personal Projects
+            Personal <BlueSpan>Projects</BlueSpan>
           </Typography>
         </Grid>
         <Grid item container spacing={5}>

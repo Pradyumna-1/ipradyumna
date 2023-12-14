@@ -72,7 +72,7 @@ const Contact = ({ secHeight, navID }: CommonProps) => {
                 </ListItemAvatar>
                 <ListItemText
                   primaryTypographyProps={{ pl: 2, variant: "h6" }}
-                  primary="Ping me on LinkedIn"
+                  primary="Connect on LinkedIn"
                 />
               </ListItemButton>
               <ListItemButton

@@ -39,3 +39,6 @@ export const projectData: Project[] = [
     githubURL: githubProfile,
   },
 ]
+
+export const aboutData =
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in tincidunt metus. Duis accumsan nibh risus, vel ornare odio ultrices ut. Suspendisse egestas elit congue dolor eleifend mollis. Donec dapibus, turpis eu malesuada ullamcorper.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in tincidunt metus. Duis accumsan nibh risus, vel ornare odio ultrices ut. Suspendisse egestas elit congue dolor eleifend mollis. Donec dapibus, turpis eu malesuada ullamcorper."
