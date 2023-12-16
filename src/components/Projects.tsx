@@ -25,8 +25,9 @@ const Projects = ({ secHeight, navID }: CommonProps) => {
               <Card
                 sx={{
                   "&:hover": {
-                    boxShadow: "0px 0px 5px 5px #3ea6ff",
-                    transform: "scale(1.03)",
+                    boxShadow: (theme) =>
+                      `0px 0px 8px 8px ${theme.palette.primary.main}`,
+                    transform: "scale(1.07)",
                   },
                 }}
               >

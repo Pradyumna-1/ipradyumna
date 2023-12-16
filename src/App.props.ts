@@ -20,3 +20,9 @@ export interface Project {
   projectURL: string
   githubURL: string
 }
+
+export interface About {
+  summary: string
+  badges: { imgURL: string; badgeURL: string }[]
+  education: { title: string; subtitle: string }
+}

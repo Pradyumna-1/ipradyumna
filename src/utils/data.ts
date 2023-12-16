@@ -1,4 +1,4 @@
-import { Project, Skill } from "../App.props"
+import { About, Project, Skill } from "../App.props"
 import { githubProfile } from "./constants"
 
 export const skillData: Skill[] = [
@@ -40,5 +40,23 @@ export const projectData: Project[] = [
   },
 ]
 
-export const aboutData =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in tincidunt metus. Duis accumsan nibh risus, vel ornare odio ultrices ut. Suspendisse egestas elit congue dolor eleifend mollis. Donec dapibus, turpis eu malesuada ullamcorper.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in tincidunt metus. Duis accumsan nibh risus, vel ornare odio ultrices ut. Suspendisse egestas elit congue dolor eleifend mollis. Donec dapibus, turpis eu malesuada ullamcorper."
+export const aboutData: About = {
+  summary:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in tincidunt metus. Duis accumsan nibh risus, vel ornare odio ultrices ut. Suspendisse egestas elit congue dolor eleifend mollis. Donec dapibus, turpis eu malesuada ullamcorper.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in tincidunt metus. Duis accumsan nibh risus, vel ornare odio ultrices ut. Suspendisse egestas elit congue dolor eleifend mollis. Donec dapibus, turpis eu malesuada ullamcorper.",
+  badges: [
+    {
+      imgURL: "/aws-certified-cloud-practitioner.png",
+      badgeURL:
+        "https://www.credly.com/badges/41330447-cc91-4cab-b2ce-82d29552d72f/public_url",
+    },
+    {
+      imgURL: "/microsoft-certified-power-platform-fundamentals.png",
+      badgeURL:
+        "https://www.credly.com/badges/1cb3e5da-1a8a-4c9a-81d0-aeb9b2a473f5/public_url",
+    },
+  ],
+  education: {
+    title: "Bachelor Of Engineering in Computer Engineering",
+    subtitle: "From L.D. College Of Engineering, Ahmedabad",
+  },
+}

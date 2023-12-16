@@ -7,18 +7,25 @@ import { BlueSpan } from "../styles/styledComponents"
 const Skills = ({ secHeight, navID }: CommonProps) => {
   return (
     <section id={navID}>
-      <Grid container sx={{ minHeight: secHeight, alignItems: "flex-start" }}>
+      <Grid container sx={{ minHeight: secHeight, alignContent: "flex-start" }}>
         <Grid item xs={12} my={3}>
           <Typography variant="h4" textAlign={"center"}>
             My <BlueSpan>Skills</BlueSpan>
           </Typography>
         </Grid>
-        <Grid item container spacing={3} flexGrow={1}>
+        <Grid item container spacing={2}>
           {skillData?.map(({ name, imgURL }, i) => (
             <Grid item key={name} xs={6} sm={4} md={3} lg={2}>
               <MotionStack
                 gap={1}
-                sx={{ height: 1 }}
+                sx={{
+                  height: 1,
+                  p: 1,
+                  "&:hover": {
+                    boxShadow: (theme) =>
+                      `0px 0px 4px 4px ${theme.palette.primary.main}`,
+                  },
+                }}
                 initial={{ opacity: 0, y: 20 }}
                 whileHover={{
                   scale: 1.05,
