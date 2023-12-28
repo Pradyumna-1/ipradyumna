@@ -4,6 +4,7 @@ import { BlueSpan } from "../styles/styledComponents"
 import { aboutData } from "../utils/data"
 import SchoolIcon from "@mui/icons-material/School"
 import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium"
+import { Player } from "@lottiefiles/react-lottie-player"
 const About = ({ secHeight, navID }: CommonProps) => {
   return (
     <section id={navID}>
@@ -13,7 +14,16 @@ const About = ({ secHeight, navID }: CommonProps) => {
             Let Me <BlueSpan>Introduce Myself</BlueSpan>
           </Typography>
         </Grid>
-        <Grid item md={5}></Grid>
+        <Grid item md={5}>
+          <Player
+            src={
+              "https://lottie.host/49f9657b-0967-40e8-a5cf-4a8835262ff8/3DV7zJE7j0.json"
+            }
+            autoplay
+            loop
+            className="lottie-player"
+          />
+        </Grid>
         <Grid item md={7}>
           <Typography>{aboutData.summary}</Typography>
           <Stack direction={"row"} gap={3} py={3}>
@@ -36,7 +46,17 @@ const About = ({ secHeight, navID }: CommonProps) => {
                 >
                   {aboutData?.education?.title}
                 </Typography>
-                <Typography>{aboutData?.education?.subtitle}</Typography>
+                <Typography>
+                  <Link
+                    color={"inherit"}
+                    underline="hover"
+                    href="https://ldce.ac.in/"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    {aboutData?.education?.subtitle}
+                  </Link>
+                </Typography>
               </Paper>
             </Box>
             <Box sx={{ flex: 1 }}>

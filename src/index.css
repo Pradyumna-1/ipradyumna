@@ -4,3 +4,8 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.lottie-player {
+  width: 100%;
+  height: 350px;
+}
