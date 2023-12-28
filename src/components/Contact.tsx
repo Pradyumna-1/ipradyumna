@@ -1,34 +1,46 @@
-import {
-  Grid,
-  List,
-  ListItemButton,
-  ListItemAvatar,
-  ListItemText,
-  Typography,
-} from "@mui/material"
+import Grid from "@mui/material/Grid"
+import Typography from "@mui/material/Typography"
+import List from "@mui/material/List"
+import ListItemButton from "@mui/material/ListItemButton"
+import ListItemAvatar from "@mui/material/ListItemAvatar"
+import ListItemText from "@mui/material/ListItemText"
 import { CommonProps } from "../App.props"
 import LinkedInIcon from "@mui/icons-material/LinkedIn"
 import LocationOnIcon from "@mui/icons-material/LocationOn"
 import EmailIcon from "@mui/icons-material/Email"
 import { emailID, linkedInProfile, myAddress } from "../utils/constants"
 import { BlueSpan, CustomAvatar } from "../styles/styledComponents"
+import Footer from "./Footer"
 const Contact = ({ secHeight, navID }: CommonProps) => {
   return (
     <section id={navID}>
-      <Grid container sx={{ minHeight: secHeight, alignContent: "flex-start" }}>
-        <Grid item xs={12} py={3} textAlign={"center"}>
-          <Typography variant="h4">
-            Let's Get <BlueSpan>In Touch</BlueSpan>
-          </Typography>
-          <Typography mt={1}>
-            Have a <BlueSpan>Question</BlueSpan> on your mind??
-          </Typography>
-          <Typography>
-            Or want a copy of my <BlueSpan>résumé</BlueSpan>? Contact me using
-            below links.
-          </Typography>
-        </Grid>
-        <Grid item container alignItems={"center"} justifyContent={"center"}>
+      <Grid
+        container
+        sx={{
+          minHeight: secHeight,
+          justifyContent: "space-between",
+          flexDirection: "column",
+        }}
+      >
+        <Grid
+          item
+          container
+          alignContent={"center"}
+          justifyContent={"center"}
+          flexGrow={1}
+        >
+          <Grid item xs={12} py={3} textAlign={"center"}>
+            <Typography variant="h4">
+              Let's Get <BlueSpan>In Touch</BlueSpan>
+            </Typography>
+            <Typography mt={1}>
+              Have a <BlueSpan>Question</BlueSpan> on your mind??
+            </Typography>
+            <Typography>
+              Or want a copy of my <BlueSpan>résumé</BlueSpan>? Contact me using
+              below links.
+            </Typography>
+          </Grid>
           <Grid item sx={{ bgcolor: "background.paper" }}>
             <List>
               <ListItemButton
@@ -98,6 +110,9 @@ const Contact = ({ secHeight, navID }: CommonProps) => {
               </ListItemButton>
             </List>
           </Grid>
+        </Grid>
+        <Grid item xs={12} sx={{ height: "fit-content" }}>
+          <Footer />
         </Grid>
       </Grid>
     </section>

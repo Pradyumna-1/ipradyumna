@@ -1,4 +1,9 @@
-import { Box, Grid, Link, Paper, Stack, Typography } from "@mui/material"
+import Grid from "@mui/material/Grid"
+import Typography from "@mui/material/Typography"
+import Box from "@mui/material/Box"
+import Stack from "@mui/material/Stack"
+import Paper from "@mui/material/Paper"
+import Link from "@mui/material/Link"
 import { CommonProps } from "../App.props"
 import { BlueSpan } from "../styles/styledComponents"
 import { aboutData } from "../utils/data"
@@ -8,8 +13,8 @@ import { Player } from "@lottiefiles/react-lottie-player"
 const About = ({ secHeight, navID }: CommonProps) => {
   return (
     <section id={navID}>
-      <Grid container sx={{ minHeight: secHeight, alignContent: "flex-start" }}>
-        <Grid item xs={12} my={3}>
+      <Grid container sx={{ minHeight: secHeight, alignContent: "center" }}>
+        <Grid item xs={12} py={3}>
           <Typography variant="h4" textAlign={"center"}>
             Let Me <BlueSpan>Introduce Myself</BlueSpan>
           </Typography>

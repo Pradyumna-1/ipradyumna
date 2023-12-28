@@ -1,42 +1,60 @@
-import { Grid, Typography } from "@mui/material"
 import { CommonProps } from "../App.props"
-import Card from "@mui/material/Card"
 import CardActions from "@mui/material/CardActions"
 import CardContent from "@mui/material/CardContent"
 import CardMedia from "@mui/material/CardMedia"
 import Button from "@mui/material/Button"
+import Grid from "@mui/material/Grid"
+import Typography from "@mui/material/Typography"
 import { projectData } from "../utils/data"
 import GitHubIcon from "@mui/icons-material/GitHub"
 import OpenInNewIcon from "@mui/icons-material/OpenInNew"
 import { BlueSpan } from "../styles/styledComponents"
+import MotionCard from "../motion/MotionCard"
 
 const Projects = ({ secHeight, navID }: CommonProps) => {
   return (
     <section id={navID}>
-      <Grid container sx={{ minHeight: secHeight, alignContent: "flex-start" }}>
-        <Grid item xs={12} my={2}>
+      <Grid container sx={{ minHeight: secHeight, alignContent: "center" }}>
+        <Grid item xs={12} py={3}>
           <Typography variant="h4" textAlign={"center"}>
             Personal <BlueSpan>Projects</BlueSpan>
           </Typography>
         </Grid>
         <Grid item container spacing={5}>
           {projectData?.map(
-            ({ name, description, githubURL, projectURL, imgURL }) => (
+            ({ name, description, githubURL, projectURL, imgURL }, i) => (
               <Grid item key={name} xs={12} sm={6} md={4}>
-                <Card
+                <MotionCard
+                  initial={{ height: 0, opacity: 0, scale: 1 }}
+                  whileInView={{
+                    height: "100%",
+                    opacity: 1,
+                    transition: {
+                      type: "spring",
+                      bounce: 0.3,
+                      delay: i * 0.5,
+                    },
+                  }}
+                  whileHover={{
+                    scale: 1.07,
+                    transition: { duration: 0.3 },
+                  }}
                   sx={{
-                    height: 1,
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "space-between",
                     "&:hover": {
                       boxShadow: (theme) =>
                         `0px 0px 8px 8px ${theme.palette.primary.main}`,
-                      transform: "scale(1.07)",
                     },
                   }}
                 >
-                  <CardMedia sx={{ height: 160 }} image={imgURL} title={name} />
+                  <CardMedia
+                    component={"img"}
+                    sx={{ aspectRatio: "320 / 143" }}
+                    image={imgURL}
+                    title={name}
+                  />
                   <CardContent>
                     <Typography gutterBottom variant="h6">
                       {name}
@@ -65,7 +83,7 @@ const Projects = ({ secHeight, navID }: CommonProps) => {
                       View Code
                     </Button>
                   </CardActions>
-                </Card>
+                </MotionCard>
               </Grid>
             )
           )}

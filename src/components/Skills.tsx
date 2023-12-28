@@ -1,14 +1,16 @@
-import { Box, Grid, Typography } from "@mui/material"
 import { CommonProps } from "../App.props"
 import { skillData } from "../utils/data"
-import MotionStack from "./MotionStack"
+import MotionStack from "../motion/MotionStack"
 import { BlueSpan } from "../styles/styledComponents"
+import Grid from "@mui/material/Grid"
+import Typography from "@mui/material/Typography"
+import Box from "@mui/material/Box"
 
 const Skills = ({ secHeight, navID }: CommonProps) => {
   return (
     <section id={navID}>
-      <Grid container sx={{ minHeight: secHeight, alignContent: "flex-start" }}>
-        <Grid item xs={12} my={3}>
+      <Grid container sx={{ minHeight: secHeight, alignContent: "center" }}>
+        <Grid item xs={12} py={3}>
           <Typography variant="h4" textAlign={"center"}>
             My <BlueSpan>Skills</BlueSpan>
           </Typography>
@@ -36,7 +38,7 @@ const Skills = ({ secHeight, navID }: CommonProps) => {
                   y: 0,
                   transition: { delay: i * 0.2 },
                 }}
-                viewport={{ once: true }}
+                // viewport={{ once: true }}
               >
                 <Box
                   sx={{

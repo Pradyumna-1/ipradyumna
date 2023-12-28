@@ -1,6 +1,8 @@
-import { Avatar, Box, Typography } from "@mui/material"
+import Typography from "@mui/material/Typography"
 import Grid from "@mui/material/Grid"
 import { CommonProps } from "../App.props"
+import Avatar from "@mui/material/Avatar"
+import MotionBox from "../motion/MotionBox"
 
 const Home = ({ secHeight, navID }: CommonProps) => {
   return (
@@ -25,11 +27,7 @@ const Home = ({ secHeight, navID }: CommonProps) => {
           <div>
             <Typography variant="h3" color={"text.secondary"}>
               Hi
-              <span
-                role="img"
-                aria-label={"hi emoji"}
-                style={{ margin: "0 0 15px 5px" }}
-              >
+              <span role="img" aria-label={"hi emoji"} className="wave">
                 {String.fromCodePoint(0x1f44b)}
               </span>
             </Typography>
@@ -57,7 +55,15 @@ const Home = ({ secHeight, navID }: CommonProps) => {
             justifyContent: "center",
           }}
         >
-          <Box
+          <MotionBox
+            initial={{ scale: 0, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            transition={{
+              delay: 0.5,
+              duration: 0.6,
+              type: "spring",
+              bounce: 0.6,
+            }}
             sx={{
               position: "relative",
               width: { xs: 180, md: 280 },
@@ -84,7 +90,7 @@ const Home = ({ secHeight, navID }: CommonProps) => {
                 objectFit: "fill",
               }}
             ></Avatar>
-          </Box>
+          </MotionBox>
         </Grid>
       </Grid>
     </section>

@@ -17,7 +17,6 @@ import PersonIcon from "@mui/icons-material/Person"
 import LayersIcon from "@mui/icons-material/Layers"
 import CallIcon from "@mui/icons-material/Call"
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp"
-import { Box, Container, Drawer, Fab, useTheme } from "@mui/material"
 import { LightTooltip } from "../styles/styledComponents"
 import { useDimensions } from "../hooks/useDimentions"
 import Home from "./Home"
@@ -25,7 +24,7 @@ import Skills from "./Skills"
 import Projects from "./Projects"
 import Contact from "./Contact"
 import About from "./About"
-import ScrollToTop from "./ScrollToTop"
+import ScrollToTop from "../motion/ScrollToTop"
 import {
   navItems,
   drawerWidth,
@@ -33,7 +32,11 @@ import {
   githubProfile,
 } from "../utils/constants"
 import { useColorMode } from "../providers/ColorModeProvider"
-import Footer from "./Footer"
+import { useTheme } from "@mui/material/styles"
+import Box from "@mui/material/Box"
+import Drawer from "@mui/material/Drawer"
+import Container from "@mui/material/Container"
+import Fab from "@mui/material/Fab"
 
 const Layout = () => {
   const navIcons = [
@@ -181,7 +184,6 @@ const Layout = () => {
         <Skills secHeight={secHeight} navID={navItems[2]} />
         <Projects secHeight={secHeight} navID={navItems[3]} />
         <Contact secHeight={secHeight} navID={navItems[4]} />
-        <Footer />
       </Container>
       <ScrollToTop>
         <Fab size="medium" aria-label="scroll back to top" color="primary">
