@@ -9,7 +9,13 @@ import Box from "@mui/material/Box"
 const Skills = ({ secHeight, navID }: CommonProps) => {
   return (
     <section id={navID}>
-      <Grid container sx={{ minHeight: secHeight, alignContent: "center" }}>
+      <Grid
+        container
+        sx={{
+          minHeight: secHeight,
+          alignContent: { xs: "flex-start", xl: "center" },
+        }}
+      >
         <Grid item xs={12} py={3}>
           <Typography variant="h4" textAlign={"center"}>
             My <BlueSpan>Skills</BlueSpan>
@@ -28,7 +34,7 @@ const Skills = ({ secHeight, navID }: CommonProps) => {
                       `0px 0px 4px 4px ${theme.palette.primary.main}`,
                   },
                 }}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 20, x: -20 }}
                 whileHover={{
                   scale: 1.05,
                   transition: { duration: 0.3 },
@@ -36,7 +42,8 @@ const Skills = ({ secHeight, navID }: CommonProps) => {
                 whileInView={{
                   opacity: 1,
                   y: 0,
-                  transition: { delay: i * 0.2 },
+                  x: 0,
+                  transition: { delay: i * 0.1 },
                 }}
                 // viewport={{ once: true }}
               >

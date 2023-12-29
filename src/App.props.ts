@@ -25,5 +25,5 @@ export interface Project {
 export interface About {
   summary: string
   badges: { imgURL: string; badgeURL: string }[]
-  education: { title: string; subtitle: string }
+  education: { title: string; grade: string; subtitle: string }
 }

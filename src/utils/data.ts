@@ -60,6 +60,7 @@ export const aboutData: About = {
   ],
   education: {
     title: "Bachelor Of Engineering in Computer Engineering",
+    grade: "9.0 CGPA",
     subtitle: "From L.D. College Of Engineering, Ahmedabad",
   },
 }

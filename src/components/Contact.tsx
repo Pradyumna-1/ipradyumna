@@ -1,7 +1,5 @@
 import Grid from "@mui/material/Grid"
 import Typography from "@mui/material/Typography"
-import List from "@mui/material/List"
-import ListItemButton from "@mui/material/ListItemButton"
 import ListItemAvatar from "@mui/material/ListItemAvatar"
 import ListItemText from "@mui/material/ListItemText"
 import { CommonProps } from "../App.props"
@@ -11,7 +9,20 @@ import EmailIcon from "@mui/icons-material/Email"
 import { emailID, linkedInProfile, myAddress } from "../utils/constants"
 import { BlueSpan, CustomAvatar } from "../styles/styledComponents"
 import Footer from "./Footer"
+import { Variants, motion } from "framer-motion"
+import ListItemButton from "@mui/material/ListItemButton"
+import List from "@mui/material/List"
 const Contact = ({ secHeight, navID }: CommonProps) => {
+  const variants: Variants = {
+    initial: { opacity: 0, y: 20 },
+    whileInView: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  }
   return (
     <section id={navID}>
       <Grid
@@ -42,8 +53,15 @@ const Contact = ({ secHeight, navID }: CommonProps) => {
             </Typography>
           </Grid>
           <Grid item sx={{ bgcolor: "background.paper" }}>
-            <List>
+            <List
+              component={motion.ul}
+              variants={variants}
+              initial="initial"
+              whileInView={"whileInView"}
+            >
               <ListItemButton
+                component={motion.a}
+                variants={variants}
                 href={`mailto:${emailID}`}
                 sx={{
                   border: 3,
@@ -65,6 +83,8 @@ const Contact = ({ secHeight, navID }: CommonProps) => {
                 />
               </ListItemButton>
               <ListItemButton
+                component={motion.a}
+                variants={variants}
                 href={linkedInProfile}
                 target="_blank"
                 rel="noopener"
@@ -88,13 +108,15 @@ const Contact = ({ secHeight, navID }: CommonProps) => {
                 />
               </ListItemButton>
               <ListItemButton
+                component={motion.a}
+                variants={variants}
                 sx={{
                   border: 3,
                   borderRadius: 2,
                   borderColor: "transparent",
+                  pointerEvents: "none",
                   "&:hover": {
                     borderColor: "primary.main",
-                    cursor: "initial",
                   },
                 }}
               >

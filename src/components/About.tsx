@@ -10,7 +10,16 @@ import { aboutData } from "../utils/data"
 import SchoolIcon from "@mui/icons-material/School"
 import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium"
 import { Player } from "@lottiefiles/react-lottie-player"
+import { Variants, motion } from "framer-motion"
 const About = ({ secHeight, navID }: CommonProps) => {
+  const variants: Variants = {
+    initial: { opacity: 0, x: 50 },
+    whileInView: {
+      opacity: 1,
+      x: 0,
+      transition: { delay: 0.3 },
+    },
+  }
   return (
     <section id={navID}>
       <Grid container sx={{ minHeight: secHeight, alignContent: "center" }}>
@@ -30,7 +39,14 @@ const About = ({ secHeight, navID }: CommonProps) => {
           />
         </Grid>
         <Grid item md={7}>
-          <Typography>{aboutData.summary}</Typography>
+          <Typography
+            component={motion.p}
+            variants={variants}
+            initial="initial"
+            whileInView={"whileInView"}
+          >
+            {aboutData.summary}
+          </Typography>
           <Stack direction={"row"} gap={3} py={3}>
             <Box sx={{ flex: 1 }}>
               <Paper elevation={3} sx={{ p: 2, height: 1 }}>
@@ -44,12 +60,9 @@ const About = ({ secHeight, navID }: CommonProps) => {
                   <SchoolIcon color="primary" fontSize="large" />
                   <Typography variant="h6">Education</Typography>
                 </Box>
-                <Typography
-                  fontSize={"1.125rem"}
-                  fontWeight={"bold"}
-                  gutterBottom
-                >
-                  {aboutData?.education?.title}
+                <Typography fontWeight={"bold"} gutterBottom>
+                  {aboutData?.education?.title} |{" "}
+                  <BlueSpan>{aboutData?.education?.grade}</BlueSpan>
                 </Typography>
                 <Typography>
                   <Link

@@ -92,12 +92,7 @@ const Layout = () => {
             sx={{ display: { xs: "none", md: "initial" } }}
           >
             {navItems.map((item, index) => (
-              <Button
-                key={index}
-                color="inherit"
-                href={`#${item}`}
-                sx={{ fontSize: "1rem" }}
-              >
+              <Button key={index} href={`#${item}`} sx={{ fontSize: "1rem" }}>
                 {item}
               </Button>
             ))}

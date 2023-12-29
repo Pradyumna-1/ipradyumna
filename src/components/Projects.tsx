@@ -14,7 +14,13 @@ import MotionCard from "../motion/MotionCard"
 const Projects = ({ secHeight, navID }: CommonProps) => {
   return (
     <section id={navID}>
-      <Grid container sx={{ minHeight: secHeight, alignContent: "center" }}>
+      <Grid
+        container
+        sx={{
+          minHeight: secHeight,
+          alignContent: { xs: "flex-start", xl: "center" },
+        }}
+      >
         <Grid item xs={12} py={3}>
           <Typography variant="h4" textAlign={"center"}>
             Personal <BlueSpan>Projects</BlueSpan>
@@ -36,7 +42,7 @@ const Projects = ({ secHeight, navID }: CommonProps) => {
                     },
                   }}
                   whileHover={{
-                    scale: 1.07,
+                    scale: 1.05,
                     transition: { duration: 0.3 },
                   }}
                   sx={{
