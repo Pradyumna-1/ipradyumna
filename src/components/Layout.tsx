@@ -173,7 +173,10 @@ const Layout = () => {
           </Stack>
         </Drawer>
       </Box>
-      <Container sx={{ "&>section": { scrollMarginTop: `${height}px` } }}>
+      <Container
+        maxWidth={"xl"}
+        sx={{ "&>section": { scrollMarginTop: `${height}px` } }}
+      >
         <Home secHeight={secHeight} navID={navItems[0]} />
         <About secHeight={secHeight} navID={navItems[1]} />
         <Skills secHeight={secHeight} navID={navItems[2]} />

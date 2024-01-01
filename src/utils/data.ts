@@ -45,7 +45,7 @@ export const projectData: Project[] = [
 
 export const aboutData: About = {
   summary:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in tincidunt metus. Duis accumsan nibh risus, vel ornare odio ultrices ut. Suspendisse egestas elit congue dolor eleifend mollis. Donec dapibus, turpis eu malesuada ullamcorper.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in tincidunt metus. Duis accumsan nibh risus, vel ornare odio ultrices ut. Suspendisse egestas elit congue dolor eleifend mollis. Donec dapibus, turpis eu malesuada ullamcorper.",
+    "I'm Nilkanth Patadiya, a front end developer with 3 years of experience in building user-friendly and responsive web applications using React.js and other modern technologies. Familiar with Agile methodologies, version control systems and debugging techniques. I have successfully completed multiple projects for clients across various domains and industries, delivering high-quality solutions that meet their needs and expectations. I graduated with a Bachelor of Engineering in Computer Engineering from L.D College of Engineering - Ahmedabad in 2020. I enjoy reading, watching tv shows & movies, playing video games, and cycling in my free time.",
   badges: [
     {
       imgURL: "/aws-certified-cloud-practitioner.png",
