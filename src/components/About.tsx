@@ -22,8 +22,8 @@ const About = ({ secHeight, navID }: CommonProps) => {
   }
   return (
     <section id={navID}>
-      <Grid container sx={{ minHeight: secHeight, alignContent: "center" }}>
-        <Grid item xs={12} py={2}>
+      <Grid container sx={{ minHeight: secHeight, alignContent: "flex-start" }}>
+        <Grid item xs={12} py={3}>
           <Typography variant="h4" textAlign={"center"}>
             Let Me <BlueSpan>Introduce Myself</BlueSpan>
           </Typography>
@@ -47,7 +47,7 @@ const About = ({ secHeight, navID }: CommonProps) => {
           >
             {aboutData.summary}
           </Typography>
-          <Stack direction={"row"} gap={3} pt={1}>
+          <Stack direction={"row"} gap={3} pt={2}>
             <Box sx={{ flex: 1 }}>
               <Paper elevation={3} sx={{ p: 2, height: 1 }}>
                 <Box
@@ -111,6 +111,7 @@ const About = ({ secHeight, navID }: CommonProps) => {
                           height: "auto",
                         }}
                         src={imgURL}
+                        alt={imgURL?.split(".")?.[0]}
                       />
                     </Link>
                   ))}

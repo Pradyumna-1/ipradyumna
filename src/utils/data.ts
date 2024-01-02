@@ -37,7 +37,7 @@ export const projectData: Project[] = [
     name: "Pizzeria",
     description:
       "Pizzeria is a MEAN Stack web application, where users order pizza online. Users can choose from the existing menu and order pizzas, also they can also customize their pizza by choosing ingredients.",
-    projectURL: "https://vercel.com/",
+    projectURL: "",
     githubURL: `${githubProfile}/Pizzeria`,
     imgURL: "pizzeria.jpg",
   },
@@ -45,7 +45,7 @@ export const projectData: Project[] = [
 
 export const aboutData: About = {
   summary:
-    "I'm Nilkanth Patadiya, a front end developer with 3 years of experience in building user-friendly and responsive web applications using React.js and other modern technologies. Familiar with Agile methodologies, version control systems and debugging techniques. I have successfully completed multiple projects for clients across various domains and industries, delivering high-quality solutions that meet their needs and expectations. I graduated with a Bachelor of Engineering in Computer Engineering from L.D College of Engineering - Ahmedabad in 2020. I enjoy reading, watching tv shows & movies, playing video games, and cycling in my free time.",
+    "I'm Nilkanth Patadiya, a front end developer with 3 years of experience in building user-friendly and responsive web applications using React.js and other modern technologies. Familiar with Agile methodologies, version control systems and debugging techniques. Since joining Accenture in December 2020, I have successfully completed multiple projects for clients across various domains and industries, delivering high-quality solutions that meet their needs and expectations. My hobbies include reading, watching various shows and films, gaming, and cycling when I have spare time.",
   badges: [
     {
       imgURL: "/aws-certified-cloud-practitioner.png",

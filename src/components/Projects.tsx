@@ -18,7 +18,7 @@ const Projects = ({ secHeight, navID }: CommonProps) => {
         container
         sx={{
           minHeight: secHeight,
-          alignContent: { xs: "flex-start", xl: "center" },
+          alignContent: "flex-start",
         }}
       >
         <Grid item xs={12} py={3}>
@@ -71,6 +71,7 @@ const Projects = ({ secHeight, navID }: CommonProps) => {
                   </CardContent>
                   <CardActions sx={{ justifyContent: "space-evenly" }}>
                     <Button
+                      disabled={!Boolean(projectURL)}
                       href={projectURL}
                       target="_blank"
                       rel="noopener"

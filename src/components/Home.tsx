@@ -2,8 +2,8 @@ import Typography from "@mui/material/Typography"
 import Grid from "@mui/material/Grid"
 import { CommonProps } from "../App.props"
 import Avatar from "@mui/material/Avatar"
-import MotionBox from "../motion/MotionBox"
-import { Box, Stack } from "@mui/material"
+import Stack from "@mui/material/Stack"
+import Box from "@mui/material/Box"
 
 const Home = ({ secHeight, navID }: CommonProps) => {
   return (
@@ -47,14 +47,7 @@ const Home = ({ secHeight, navID }: CommonProps) => {
                 I'm a Front End Developer
               </Typography>
             </Box>
-            <MotionBox
-              initial={{ scale: 0, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              transition={{
-                delay: 0.3,
-                type: "spring",
-                bounce: 0.3,
-              }}
+            <Box
               sx={{
                 position: "relative",
                 width: { xs: 180, md: 280 },
@@ -67,6 +60,7 @@ const Home = ({ secHeight, navID }: CommonProps) => {
                   borderRadius: "inherit",
                   background: "linear-gradient(#00C0FD, #E70FAA)",
                   zIndex: -1,
+                  animation: "spin 4s linear infinite",
                 },
                 "&::after": { filter: "blur(16px)" },
               }}
@@ -81,7 +75,7 @@ const Home = ({ secHeight, navID }: CommonProps) => {
                   objectFit: "fill",
                 }}
               ></Avatar>
-            </MotionBox>
+            </Box>
           </Stack>
         </Grid>
       </Grid>

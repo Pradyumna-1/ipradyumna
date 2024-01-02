@@ -51,8 +51,9 @@ const Layout = () => {
   const { toggleColorMode } = useColorMode()
   const theme = useTheme()
   const appBarRef = React.useRef(null)
-  const { height } = useDimensions(appBarRef)
-  const secHeight = React.useMemo(() => `calc(100vh - ${height}px)`, [height])
+
+  let { height } = useDimensions(appBarRef)
+  let secHeight = React.useMemo(() => `calc(100vh - ${height}px)`, [height])
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState)
@@ -173,10 +174,7 @@ const Layout = () => {
           </Stack>
         </Drawer>
       </Box>
-      <Container
-        maxWidth={"xl"}
-        sx={{ "&>section": { scrollMarginTop: `${height}px` } }}
-      >
+      <Container sx={{ "&>section": { scrollMarginTop: `${height}px` } }}>
         <Home secHeight={secHeight} navID={navItems[0]} />
         <About secHeight={secHeight} navID={navItems[1]} />
         <Skills secHeight={secHeight} navID={navItems[2]} />

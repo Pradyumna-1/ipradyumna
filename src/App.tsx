@@ -14,7 +14,7 @@ function App() {
   const { mode } = useColorMode()
   // Update the theme only if the mode changes
   let theme = React.useMemo(() => createTheme(getDesignTokens(mode)), [mode])
-  theme = responsiveFontSizes(theme)
+  theme = responsiveFontSizes(theme, { factor: 5 })
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline enableColorScheme />

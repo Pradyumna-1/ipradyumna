@@ -13,7 +13,7 @@ const Skills = ({ secHeight, navID }: CommonProps) => {
         container
         sx={{
           minHeight: secHeight,
-          alignContent: { xs: "flex-start", xl: "center" },
+          alignContent: "flex-start",
         }}
       >
         <Grid item xs={12} py={3}>
