@@ -45,6 +45,7 @@ const Projects = ({ secHeight, navID }: CommonProps) => {
                     scale: 1.05,
                     transition: { duration: 0.3 },
                   }}
+                  viewport={{ once: true }}
                   sx={{
                     display: "flex",
                     flexDirection: "column",

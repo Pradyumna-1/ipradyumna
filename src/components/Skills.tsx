@@ -45,7 +45,7 @@ const Skills = ({ secHeight, navID }: CommonProps) => {
                   x: 0,
                   transition: { delay: i * 0.1 },
                 }}
-                // viewport={{ once: true }}
+                viewport={{ once: true }}
               >
                 <Box
                   sx={{

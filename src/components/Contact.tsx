@@ -58,6 +58,7 @@ const Contact = ({ secHeight, navID }: CommonProps) => {
               variants={variants}
               initial="initial"
               whileInView={"whileInView"}
+              viewport={{ once: true }}
             >
               <ListItemButton
                 component={motion.a}

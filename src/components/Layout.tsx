@@ -53,7 +53,7 @@ const Layout = () => {
   const appBarRef = React.useRef(null)
 
   let { height } = useDimensions(appBarRef)
-  let secHeight = React.useMemo(() => `calc(100vh - ${height}px)`, [height])
+  let secHeight = React.useMemo(() => `calc(100dvh - ${height}px)`, [height])
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState)

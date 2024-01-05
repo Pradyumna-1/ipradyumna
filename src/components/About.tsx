@@ -44,6 +44,7 @@ const About = ({ secHeight, navID }: CommonProps) => {
             variants={variants}
             initial="initial"
             whileInView={"whileInView"}
+            viewport={{ once: true }}
           >
             {aboutData.summary}
           </Typography>
