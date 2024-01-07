@@ -5,7 +5,6 @@ import Stack from "@mui/material/Stack"
 import Toolbar from "@mui/material/Toolbar"
 import Typography from "@mui/material/Typography"
 import React from "react"
-import LaptopWindowsTwoToneIcon from "@mui/icons-material/LaptopWindowsTwoTone"
 import GitHubIcon from "@mui/icons-material/GitHub"
 import LinkedInIcon from "@mui/icons-material/LinkedIn"
 import LightModeIcon from "@mui/icons-material/LightMode"
@@ -16,7 +15,7 @@ import HandymanIcon from "@mui/icons-material/Handyman"
 import PersonIcon from "@mui/icons-material/Person"
 import LayersIcon from "@mui/icons-material/Layers"
 import CallIcon from "@mui/icons-material/Call"
-import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp"
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward"
 import { LightTooltip } from "../styles/styledComponents"
 import { useDimensions } from "../hooks/useDimentions"
 import Home from "./Home"
@@ -59,79 +58,7 @@ const Layout = () => {
     setMobileOpen((prevState) => !prevState)
   }
   return (
-    <>
-      {/* Navigation For large screens */}
-      <AppBar
-        position="fixed"
-        color="transparent"
-        component="nav"
-        ref={appBarRef}
-        sx={{ px: { xs: 0, md: 4 }, backdropFilter: "blur(14px)" }}
-      >
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { md: "none" } }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <LaptopWindowsTwoToneIcon fontSize="large" color="primary" />
-          <Typography
-            variant="h5"
-            fontFamily={"Lucida Handwriting"}
-            color="primary"
-          >
-            &lt;nilkanth /&gt;
-          </Typography>
-          <Stack
-            direction={"row"}
-            spacing={1}
-            ml={3}
-            sx={{ display: { xs: "none", md: "initial" } }}
-          >
-            {navItems.map((item, index) => (
-              <Button key={index} href={`#${item}`} sx={{ fontSize: "1rem" }}>
-                {item}
-              </Button>
-            ))}
-          </Stack>
-          <Stack direction={"row"} spacing={1} ml={"auto"}>
-            <LightTooltip title="LinkedIn Profile">
-              <IconButton
-                color="primary"
-                target="_blank"
-                rel="noopener"
-                href={linkedInProfile}
-              >
-                <LinkedInIcon />
-              </IconButton>
-            </LightTooltip>
-            <LightTooltip title="Github Profile">
-              <IconButton
-                color="primary"
-                href={githubProfile}
-                target="_blank"
-                rel="noopener"
-              >
-                <GitHubIcon />
-              </IconButton>
-            </LightTooltip>
-            <LightTooltip title="Change theme">
-              <IconButton color="primary" onClick={toggleColorMode}>
-                {theme.palette.mode === "dark" ? (
-                  <DarkModeOutlinedIcon />
-                ) : (
-                  <LightModeIcon />
-                )}
-              </IconButton>
-            </LightTooltip>
-          </Stack>
-        </Toolbar>
-      </AppBar>
-      <Toolbar id="back-to-top-anchor" />
+    <Box sx={{ width: 1 }}>
       {/*Navigation For small screens */}
       <Box component="nav">
         <Drawer
@@ -174,19 +101,99 @@ const Layout = () => {
           </Stack>
         </Drawer>
       </Box>
-      <Container sx={{ "&>section": { scrollMarginTop: `${height}px` } }}>
-        <Home secHeight={secHeight} navID={navItems[0]} />
-        <About secHeight={secHeight} navID={navItems[1]} />
-        <Skills secHeight={secHeight} navID={navItems[2]} />
-        <Projects secHeight={secHeight} navID={navItems[3]} />
-        <Contact secHeight={secHeight} navID={navItems[4]} />
-      </Container>
-      <ScrollToTop>
-        <Fab size="medium" aria-label="scroll back to top" color="primary">
-          <KeyboardArrowUpIcon />
-        </Fab>
-      </ScrollToTop>
-    </>
+      <Stack sx={{ width: 1 }}>
+        {/* Navigation For large screens */}
+        <AppBar
+          id="back-to-top-anchor"
+          position="sticky"
+          color="transparent"
+          component="nav"
+          ref={appBarRef}
+          sx={{ backdropFilter: "blur(14px)" }}
+        >
+          <Toolbar sx={{ justifyContent: "space-between" }}>
+            <Box sx={{ display: "flex", alignItems: "center" }}>
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                edge="start"
+                onClick={handleDrawerToggle}
+                sx={{ mr: 2, display: { md: "none" } }}
+              >
+                <MenuIcon />
+              </IconButton>
+              <Typography variant="h4" fontFamily={"Aladin"} color="primary">
+                Nilkanth Patadiya
+              </Typography>
+              <Stack
+                direction={"row"}
+                spacing={1}
+                ml={3}
+                sx={{ display: { xs: "none", md: "initial" } }}
+              >
+                {navItems.map((item, index) => (
+                  <Button
+                    key={index}
+                    href={`#${item}`}
+                    sx={{ fontSize: "1rem" }}
+                  >
+                    {item}
+                  </Button>
+                ))}
+              </Stack>
+            </Box>
+            <Stack direction={"row"} spacing={1}>
+              <LightTooltip title="LinkedIn Profile">
+                <IconButton
+                  color="primary"
+                  target="_blank"
+                  rel="noopener"
+                  href={linkedInProfile}
+                >
+                  <LinkedInIcon />
+                </IconButton>
+              </LightTooltip>
+              <LightTooltip title="Github Profile">
+                <IconButton
+                  color="primary"
+                  href={githubProfile}
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <GitHubIcon />
+                </IconButton>
+              </LightTooltip>
+              <LightTooltip title="Toggle mode">
+                <IconButton color="primary" onClick={toggleColorMode}>
+                  {theme.palette.mode === "dark" ? (
+                    <DarkModeOutlinedIcon />
+                  ) : (
+                    <LightModeIcon />
+                  )}
+                </IconButton>
+              </LightTooltip>
+            </Stack>
+          </Toolbar>
+        </AppBar>
+        <Container sx={{ "&>section": { scrollMarginTop: `${height}px` } }}>
+          <Home secHeight={secHeight} navID={navItems[0]} />
+          <About secHeight={secHeight} navID={navItems[1]} />
+          <Skills secHeight={secHeight} navID={navItems[2]} />
+          <Projects secHeight={secHeight} navID={navItems[3]} />
+          <Contact secHeight={secHeight} navID={navItems[4]} />
+        </Container>
+        <ScrollToTop>
+          <Fab
+            size="medium"
+            aria-label="scroll back to top"
+            title="Scroll to Top"
+            color="primary"
+          >
+            <ArrowUpwardIcon />
+          </Fab>
+        </ScrollToTop>
+      </Stack>
+    </Box>
   )
 }
 

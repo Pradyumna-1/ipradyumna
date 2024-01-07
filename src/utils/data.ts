@@ -7,7 +7,7 @@ export const skillData: Skill[] = [
   { name: "Javascript", imgURL: "/icons_js.svg" },
   { name: "Typescript", imgURL: "/icons-typescript.svg" },
   { name: "React", imgURL: "/logos_react.svg" },
-  { name: "NextJS", imgURL: "/logo_next.svg" },
+  { name: "Next.js", imgURL: "/logo_next.svg" },
   { name: "Material UI", imgURL: "/logo_mui.svg" },
   { name: "Bootstrap", imgURL: "/logos_bootstrap.svg" },
   { name: "React Query", imgURL: "/react-query.svg" },
@@ -45,7 +45,7 @@ export const projectData: Project[] = [
 
 export const aboutData: About = {
   summary:
-    "I'm Nilkanth Patadiya, a front end developer with 3 years of experience in building user-friendly and responsive web applications using React.js and other modern technologies. Familiar with Agile methodologies, version control systems and debugging techniques. Since joining Accenture in December 2020, I have successfully completed multiple projects for clients across various domains and industries, delivering high-quality solutions that meet their needs and expectations. My hobbies include reading, watching various shows and films, gaming, and cycling when I have spare time.",
+    "Hey I'm Nilkanth Patadiya, a Front End Developer with 3 years of experience in building user-friendly and responsive web applications using React and other modern technologies. Familiar with Agile methodologies, version control systems and debugging techniques. Since joining Accenture in December 2020, I have successfully completed multiple projects for clients across various domains and industries, delivering high-quality solutions that meet their needs and expectations. My hobbies include reading, listening to music, gaming, and cycling when I have spare time.",
   badges: [
     {
       imgURL: "/aws-certified-cloud-practitioner.png",

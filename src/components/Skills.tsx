@@ -23,7 +23,7 @@ const Skills = ({ secHeight, navID }: CommonProps) => {
         </Grid>
         <Grid item container spacing={2}>
           {skillData?.map(({ name, imgURL }, i) => (
-            <Grid item key={name} xs={6} sm={4} md={3} lg={2}>
+            <Grid item key={name} xs={6} sm={3} lg={2}>
               <MotionStack
                 gap={1}
                 sx={{

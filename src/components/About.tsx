@@ -48,7 +48,7 @@ const About = ({ secHeight, navID }: CommonProps) => {
           >
             {aboutData.summary}
           </Typography>
-          <Stack direction={"row"} gap={3} pt={2}>
+          <Stack direction={{ xs: "column", md: "row" }} gap={3} pt={2}>
             <Box sx={{ flex: 1 }}>
               <Paper elevation={3} sx={{ p: 2, height: 1 }}>
                 <Box
