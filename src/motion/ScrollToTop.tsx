@@ -12,8 +12,9 @@ function ScrollToTop({ children }: React.PropsWithChildren<{}>) {
   const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
     const anchor = (
       (event.target as HTMLDivElement).ownerDocument || document
-    ).querySelector("#back-to-top-anchor")
+    ).querySelector("#home")
 
+    console.log(anchor)
     if (anchor) {
       anchor.scrollIntoView({
         block: "center",
@@ -26,7 +27,11 @@ function ScrollToTop({ children }: React.PropsWithChildren<{}>) {
       <Box
         onClick={handleClick}
         role="presentation"
-        sx={{ position: "fixed", bottom: 16, right: 16 }}
+        sx={{
+          position: "fixed",
+          bottom: { xs: 45, sm: 25 },
+          right: 25,
+        }}
       >
         {children}
       </Box>

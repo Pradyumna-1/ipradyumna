@@ -7,7 +7,6 @@ const Footer = () => {
     <footer>
       <Divider />
       <Typography
-        variant="h6"
         textAlign={"center"}
         sx={{ textShadow: "1px 1px black", p: 2 }}
       >

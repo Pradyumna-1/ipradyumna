@@ -28,7 +28,7 @@ const About = ({ secHeight, navID }: CommonProps) => {
             Let Me <BlueSpan>Introduce Myself</BlueSpan>
           </Typography>
         </Grid>
-        <Grid item md={5}>
+        <Grid item xs={12} sm={5}>
           <Player
             src={
               "https://lottie.host/49f9657b-0967-40e8-a5cf-4a8835262ff8/3DV7zJE7j0.json"
@@ -38,8 +38,9 @@ const About = ({ secHeight, navID }: CommonProps) => {
             className="lottie-player"
           />
         </Grid>
-        <Grid item md={7}>
+        <Grid item sm={7}>
           <Typography
+            variant="body1"
             component={motion.p}
             variants={variants}
             initial="initial"

@@ -1,10 +1,10 @@
 import Typography from "@mui/material/Typography"
 import Grid from "@mui/material/Grid"
 import { CommonProps } from "../App.props"
-import Avatar from "@mui/material/Avatar"
 import Stack from "@mui/material/Stack"
 import Box from "@mui/material/Box"
-
+import Image from "mui-image"
+import Skeleton from "@mui/material/Skeleton"
 const Home = ({ secHeight, navID }: CommonProps) => {
   return (
     <section id={navID}>
@@ -50,8 +50,8 @@ const Home = ({ secHeight, navID }: CommonProps) => {
             <Box
               sx={{
                 position: "relative",
-                width: { xs: 180, md: 280 },
-                height: { xs: 180, md: 280 },
+                width: { xs: 220, md: 280 },
+                height: { xs: 220, md: 280 },
                 borderRadius: "50%",
                 "&::before,&::after": {
                   content: '" "',
@@ -65,16 +65,16 @@ const Home = ({ secHeight, navID }: CommonProps) => {
                 "&::after": { filter: "blur(16px)" },
               }}
             >
-              <Avatar
+              <Image
                 alt="Nilkanth Patadiya"
                 src="/profile-pic.jpg"
-                sx={{
-                  width: 1,
-                  height: 1,
+                style={{
+                  width: "100%",
+                  height: "100%",
                   borderRadius: "50%",
-                  objectFit: "fill",
+                  objectFit: "cover",
                 }}
-              ></Avatar>
+              />
             </Box>
           </Stack>
         </Grid>

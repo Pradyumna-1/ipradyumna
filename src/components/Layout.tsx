@@ -52,7 +52,7 @@ const Layout = () => {
   const appBarRef = React.useRef(null)
 
   let { height } = useDimensions(appBarRef)
-  let secHeight = React.useMemo(() => `calc(100dvh - ${height}px)`, [height])
+  let secHeight = React.useMemo(() => `calc(100vh - ${height}px)`, [height])
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState)
@@ -104,12 +104,11 @@ const Layout = () => {
       <Stack sx={{ width: 1 }}>
         {/* Navigation For large screens */}
         <AppBar
-          id="back-to-top-anchor"
           position="sticky"
           color="transparent"
           component="nav"
           ref={appBarRef}
-          sx={{ backdropFilter: "blur(14px)" }}
+          sx={{ backdropFilter: "blur(14px)", px: { xs: 0, md: 4 } }}
         >
           <Toolbar sx={{ justifyContent: "space-between" }}>
             <Box sx={{ display: "flex", alignItems: "center" }}>
@@ -118,11 +117,16 @@ const Layout = () => {
                 aria-label="open drawer"
                 edge="start"
                 onClick={handleDrawerToggle}
-                sx={{ mr: 2, display: { md: "none" } }}
+                sx={{ mr: { xs: 0, sm: 2 }, display: { md: "none" } }}
               >
                 <MenuIcon />
               </IconButton>
-              <Typography variant="h4" fontFamily={"Aladin"} color="primary">
+              <Typography
+                variant="h4"
+                fontFamily={"Aladin"}
+                color="primary"
+                sx={{ textShadow: "1px 1px black" }}
+              >
                 Nilkanth Patadiya
               </Typography>
               <Stack
@@ -181,17 +185,17 @@ const Layout = () => {
           <Skills secHeight={secHeight} navID={navItems[2]} />
           <Projects secHeight={secHeight} navID={navItems[3]} />
           <Contact secHeight={secHeight} navID={navItems[4]} />
+          <ScrollToTop>
+            <Fab
+              size="medium"
+              aria-label="scroll back to top"
+              title="Scroll to Top"
+              color="primary"
+            >
+              <ArrowUpwardIcon />
+            </Fab>
+          </ScrollToTop>
         </Container>
-        <ScrollToTop>
-          <Fab
-            size="medium"
-            aria-label="scroll back to top"
-            title="Scroll to Top"
-            color="primary"
-          >
-            <ArrowUpwardIcon />
-          </Fab>
-        </ScrollToTop>
       </Stack>
     </Box>
   )

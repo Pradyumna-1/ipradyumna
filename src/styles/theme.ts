@@ -35,7 +35,6 @@ export const getDesignTokens = (mode: PaletteMode): ThemeOptions => {
       },
       h3: {
         fontWeight: 700,
-        fontSize: "2.75rem",
       },
       h4: {
         fontWeight: 700,
