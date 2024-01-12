@@ -11,9 +11,9 @@ export const skillData: Skill[] = [
   { name: "Material UI", imgURL: "/logo_mui.svg" },
   { name: "Bootstrap", imgURL: "/logos_bootstrap.svg" },
   { name: "React Query", imgURL: "/react-query.svg" },
+  { name: "Axios", imgURL: "/axios-logo.png" },
   { name: "Apache Echarts", imgURL: "/echarts-logo.svg" },
   { name: "Git", imgURL: "/logos_git.svg" },
-  { name: "NPM", imgURL: "/npm-logo.svg" },
 ]
 
 export const projectData: Project[] = [

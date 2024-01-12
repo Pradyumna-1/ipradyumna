@@ -4,7 +4,6 @@ import { CommonProps } from "../App.props"
 import Stack from "@mui/material/Stack"
 import Box from "@mui/material/Box"
 import Image from "mui-image"
-import Skeleton from "@mui/material/Skeleton"
 const Home = ({ secHeight, navID }: CommonProps) => {
   return (
     <section id={navID}>
@@ -19,12 +18,13 @@ const Home = ({ secHeight, navID }: CommonProps) => {
         <Grid item>
           <Stack
             direction={{ xs: "column-reverse", sm: "row" }}
-            gap={10}
+            gap={{ xs: 10, sm: 2, md: 10 }}
             alignItems={"center"}
           >
             <Box
               sx={{
                 textAlign: { xs: "center", sm: "initial" },
+                flexShrink: 2,
               }}
             >
               <Typography variant="h3" color={"text.secondary"}>

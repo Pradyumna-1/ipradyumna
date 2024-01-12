@@ -28,7 +28,7 @@ const About = ({ secHeight, navID }: CommonProps) => {
             Let Me <BlueSpan>Introduce Myself</BlueSpan>
           </Typography>
         </Grid>
-        <Grid item xs={12} sm={5}>
+        <Grid item xs={12} md={5}>
           <Player
             src={
               "https://lottie.host/49f9657b-0967-40e8-a5cf-4a8835262ff8/3DV7zJE7j0.json"
@@ -38,7 +38,7 @@ const About = ({ secHeight, navID }: CommonProps) => {
             className="lottie-player"
           />
         </Grid>
-        <Grid item sm={7}>
+        <Grid item md={7}>
           <Typography
             variant="body1"
             component={motion.p}
@@ -49,7 +49,11 @@ const About = ({ secHeight, navID }: CommonProps) => {
           >
             {aboutData.summary}
           </Typography>
-          <Stack direction={{ xs: "column", md: "row" }} gap={3} pt={2}>
+          <Stack
+            direction={{ xs: "column", md: "row" }}
+            gap={{ xs: 2, md: 3 }}
+            pt={2}
+          >
             <Box sx={{ flex: 1 }}>
               <Paper elevation={3} sx={{ p: 2, height: 1 }}>
                 <Box
