@@ -29,7 +29,7 @@ function ScrollToTop({ children }: React.PropsWithChildren<{}>) {
         role="presentation"
         sx={{
           position: "fixed",
-          bottom: { xs: 45, sm: 25 },
+          bottom: { xs: 75, sm: 25 },
           right: 25,
         }}
       >

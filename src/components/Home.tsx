@@ -11,14 +11,15 @@ const Home = ({ secHeight, navID }: CommonProps) => {
         container
         sx={{
           minHeight: secHeight,
-          alignItems: "center",
-          justifyContent: "center",
+          alignItems: { xs: "baseline", sm: "center" },
+          justifyContent: { xs: "normal", sm: "center" },
+          pt: { xs: 10, sm: 0 },
         }}
       >
         <Grid item>
           <Stack
             direction={{ xs: "column-reverse", sm: "row" }}
-            gap={{ xs: 10, sm: 2, md: 10 }}
+            gap={{ xs: 6, sm: 2, md: 10 }}
             alignItems={"center"}
           >
             <Box

@@ -29,6 +29,7 @@ import {
   drawerWidth,
   linkedInProfile,
   githubProfile,
+  myName,
 } from "../utils/constants"
 import { useColorMode } from "../providers/ColorModeProvider"
 import { useTheme } from "@mui/material/styles"
@@ -36,6 +37,7 @@ import Box from "@mui/material/Box"
 import Drawer from "@mui/material/Drawer"
 import Container from "@mui/material/Container"
 import Fab from "@mui/material/Fab"
+import useMediaQuery from "@mui/material/useMediaQuery"
 
 const Layout = () => {
   const navIcons = [
@@ -49,6 +51,7 @@ const Layout = () => {
   const [mobileOpen, setMobileOpen] = React.useState(false)
   const { toggleColorMode } = useColorMode()
   const theme = useTheme()
+  const matches = useMediaQuery(theme.breakpoints.down("sm"))
   const appBarRef = React.useRef(null)
 
   let { height } = useDimensions(appBarRef)
@@ -121,13 +124,8 @@ const Layout = () => {
               >
                 <MenuIcon />
               </IconButton>
-              <Typography
-                variant="h4"
-                fontFamily={"Aladin"}
-                color="primary"
-                sx={{ textShadow: "1px 1px black" }}
-              >
-                Nilkanth Patadiya
+              <Typography variant="h4" fontFamily={"Iceland"} color="primary">
+                {matches ? myName.split(" ")[0] : myName}
               </Typography>
               <Stack
                 direction={"row"}

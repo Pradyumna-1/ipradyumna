@@ -38,7 +38,7 @@ const About = ({ secHeight, navID }: CommonProps) => {
             className="lottie-player"
           />
         </Grid>
-        <Grid item md={7}>
+        <Grid item md={7} overflow={"hidden"}>
           <Typography
             variant="body1"
             component={motion.p}
