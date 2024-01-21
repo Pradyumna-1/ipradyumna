@@ -55,7 +55,7 @@ const About = ({ secHeight, navID }: CommonProps) => {
             pt={2}
           >
             <Box sx={{ flex: 1 }}>
-              <Paper elevation={3} sx={{ p: 2, height: 1 }}>
+              <Paper variant="outlined" sx={{ p: 2, height: 1 }}>
                 <Box
                   sx={{
                     display: "inline-flex",
@@ -84,7 +84,7 @@ const About = ({ secHeight, navID }: CommonProps) => {
               </Paper>
             </Box>
             <Box sx={{ flex: 1 }}>
-              <Paper elevation={3} sx={{ p: 2, height: 1 }}>
+              <Paper variant="outlined" sx={{ p: 2, height: 1 }}>
                 <Box
                   sx={{
                     display: "inline-flex",
