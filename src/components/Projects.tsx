@@ -10,8 +10,37 @@ import GitHubIcon from "@mui/icons-material/GitHub"
 import OpenInNewIcon from "@mui/icons-material/OpenInNew"
 import { BlueSpan } from "../styles/styledComponents"
 import MotionCard from "../motion/MotionCard"
+import useMediaQuery from "@mui/material/useMediaQuery"
+import { Theme } from "@mui/material/styles"
+import { Variants } from "framer-motion"
 
 const Projects = ({ secHeight, navID }: CommonProps) => {
+  const isSmallScreen = useMediaQuery((theme: Theme) =>
+    theme.breakpoints.down("sm")
+  )
+  let variants: Variants = isSmallScreen
+    ? {
+        initial: {},
+        whileInView: {},
+        whileHover: {},
+      }
+    : {
+        initial: { height: 0, opacity: 0, scale: 1 },
+        whileInView: (i) => ({
+          height: "100%",
+          opacity: 1,
+          transition: {
+            type: "spring",
+            bounce: 0.3,
+            delay: i * 0.5,
+          },
+        }),
+        whileHover: {
+          scale: 1.05,
+          transition: { duration: 0.3 },
+        },
+      }
+
   return (
     <section id={navID}>
       <Grid
@@ -31,20 +60,11 @@ const Projects = ({ secHeight, navID }: CommonProps) => {
             ({ name, description, githubURL, projectURL, imgURL }, i) => (
               <Grid item key={name} xs={12} sm={6} md={4}>
                 <MotionCard
-                  initial={{ height: 0, opacity: 0, scale: 1 }}
-                  whileInView={{
-                    height: "100%",
-                    opacity: 1,
-                    transition: {
-                      type: "spring",
-                      bounce: 0.3,
-                      delay: i * 0.5,
-                    },
-                  }}
-                  whileHover={{
-                    scale: 1.05,
-                    transition: { duration: 0.3 },
-                  }}
+                  custom={i}
+                  variants={variants}
+                  initial="initial"
+                  whileInView="whileInView"
+                  whileHover="whileHover"
                   viewport={{ once: true }}
                   sx={{
                     display: "flex",

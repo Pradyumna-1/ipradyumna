@@ -12,17 +12,29 @@ import Footer from "./Footer"
 import { Variants, motion } from "framer-motion"
 import ListItemButton from "@mui/material/ListItemButton"
 import List from "@mui/material/List"
+import useMediaQuery from "@mui/material/useMediaQuery"
+import { Theme } from "@mui/material/styles"
+
 const Contact = ({ secHeight, navID }: CommonProps) => {
-  const variants: Variants = {
-    initial: { opacity: 0, y: 20 },
-    whileInView: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  }
+  const isSmallScreen = useMediaQuery((theme: Theme) =>
+    theme.breakpoints.down("sm")
+  )
+  let variants: Variants = isSmallScreen
+    ? {
+        initial: {},
+        whileInView: {},
+      }
+    : {
+        initial: { opacity: 0, y: 20 },
+        whileInView: {
+          opacity: 1,
+          y: 0,
+          transition: {
+            staggerChildren: 0.2,
+          },
+        },
+      }
+
   return (
     <section id={navID}>
       <Grid

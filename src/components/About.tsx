@@ -11,15 +11,27 @@ import SchoolIcon from "@mui/icons-material/School"
 import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium"
 import { Player } from "@lottiefiles/react-lottie-player"
 import { Variants, motion } from "framer-motion"
+import useMediaQuery from "@mui/material/useMediaQuery"
+import { Theme } from "@mui/material/styles"
+
 const About = ({ secHeight, navID }: CommonProps) => {
-  const variants: Variants = {
-    initial: { opacity: 0, x: 50 },
-    whileInView: {
-      opacity: 1,
-      x: 0,
-      transition: { delay: 0.3 },
-    },
-  }
+  const isSmallScreen = useMediaQuery((theme: Theme) =>
+    theme.breakpoints.down("sm")
+  )
+  let variants: Variants = isSmallScreen
+    ? {
+        initial: {},
+        whileInView: {},
+      }
+    : {
+        initial: { opacity: 0, x: 50 },
+        whileInView: {
+          opacity: 1,
+          x: 0,
+          transition: { delay: 0.3 },
+        },
+      }
+
   return (
     <section id={navID}>
       <Grid container sx={{ minHeight: secHeight, alignContent: "flex-start" }}>
@@ -44,7 +56,7 @@ const About = ({ secHeight, navID }: CommonProps) => {
             component={motion.p}
             variants={variants}
             initial="initial"
-            whileInView={"whileInView"}
+            whileInView="whileInView"
             viewport={{ once: true }}
           >
             {aboutData.summary}

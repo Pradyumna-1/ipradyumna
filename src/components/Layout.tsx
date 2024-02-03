@@ -51,7 +51,7 @@ const Layout = () => {
   const [mobileOpen, setMobileOpen] = React.useState(false)
   const { toggleColorMode } = useColorMode()
   const theme = useTheme()
-  const matches = useMediaQuery(theme.breakpoints.down("sm"))
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"))
   const appBarRef = React.useRef(null)
 
   let { height } = useDimensions(appBarRef)
@@ -125,7 +125,7 @@ const Layout = () => {
                 <MenuIcon />
               </IconButton>
               <Typography variant="h4" fontFamily={"Iceland"} color="primary">
-                {matches ? myName.split(" ")[0] : myName}
+                {isSmallScreen ? myName.split(" ")[0] : myName}
               </Typography>
               <Stack
                 direction={"row"}
