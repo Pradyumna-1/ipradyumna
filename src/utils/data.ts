@@ -31,7 +31,7 @@ export const projectData: Project[] = [
       "A pokedex website that allows users to search and view information about various Pokémon characters. A fuzzy search feature is present on the home page. User can view more details by clicking on the particular pokémon.",
     projectURL: "https://vercel.com/",
     githubURL: `${githubProfile}/my-pokedex`,
-    imgURL: "/pokedex.jpg",
+    imgURL: "/pokedex.png",
   },
   {
     name: "Pizzeria",

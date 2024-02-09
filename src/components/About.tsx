@@ -10,7 +10,7 @@ import { aboutData } from "../utils/data"
 import SchoolIcon from "@mui/icons-material/School"
 import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium"
 import { Player } from "@lottiefiles/react-lottie-player"
-import { Variants, motion } from "framer-motion"
+import { Variants, m } from "framer-motion"
 import useMediaQuery from "@mui/material/useMediaQuery"
 import { Theme } from "@mui/material/styles"
 
@@ -20,8 +20,8 @@ const About = ({ secHeight, navID }: CommonProps) => {
   )
   let variants: Variants = isSmallScreen
     ? {
-        initial: {},
-        whileInView: {},
+        initial: { opacity: 0 },
+        whileInView: { opacity: 1 },
       }
     : {
         initial: { opacity: 0, x: 50 },
@@ -53,7 +53,7 @@ const About = ({ secHeight, navID }: CommonProps) => {
         <Grid item md={7} overflow={"hidden"}>
           <Typography
             variant="body1"
-            component={motion.p}
+            component={m.p}
             variants={variants}
             initial="initial"
             whileInView="whileInView"

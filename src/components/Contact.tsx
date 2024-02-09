@@ -9,31 +9,21 @@ import EmailIcon from "@mui/icons-material/Email"
 import { emailID, linkedInProfile, myAddress } from "../utils/constants"
 import { BlueSpan, CustomAvatar } from "../styles/styledComponents"
 import Footer from "./Footer"
-import { Variants, motion } from "framer-motion"
+import { Variants, m } from "framer-motion"
 import ListItemButton from "@mui/material/ListItemButton"
 import List from "@mui/material/List"
-import useMediaQuery from "@mui/material/useMediaQuery"
-import { Theme } from "@mui/material/styles"
 
 const Contact = ({ secHeight, navID }: CommonProps) => {
-  const isSmallScreen = useMediaQuery((theme: Theme) =>
-    theme.breakpoints.down("sm")
-  )
-  let variants: Variants = isSmallScreen
-    ? {
-        initial: {},
-        whileInView: {},
-      }
-    : {
-        initial: { opacity: 0, y: 20 },
-        whileInView: {
-          opacity: 1,
-          y: 0,
-          transition: {
-            staggerChildren: 0.2,
-          },
-        },
-      }
+  let variants: Variants = {
+    initial: { opacity: 0, y: 20 },
+    whileInView: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  }
 
   return (
     <section id={navID}>
@@ -66,14 +56,14 @@ const Contact = ({ secHeight, navID }: CommonProps) => {
           </Grid>
           <Grid item sx={{ bgcolor: "background.paper" }}>
             <List
-              component={motion.ul}
+              component={m.ul}
               variants={variants}
               initial="initial"
               whileInView={"whileInView"}
               viewport={{ once: true }}
             >
               <ListItemButton
-                component={motion.a}
+                component={m.a}
                 variants={variants}
                 href={`mailto:${emailID}`}
                 sx={{
@@ -96,7 +86,7 @@ const Contact = ({ secHeight, navID }: CommonProps) => {
                 />
               </ListItemButton>
               <ListItemButton
-                component={motion.a}
+                component={m.a}
                 variants={variants}
                 href={linkedInProfile}
                 target="_blank"
@@ -121,7 +111,7 @@ const Contact = ({ secHeight, navID }: CommonProps) => {
                 />
               </ListItemButton>
               <ListItemButton
-                component={motion.a}
+                component={m.a}
                 variants={variants}
                 sx={{
                   border: 3,

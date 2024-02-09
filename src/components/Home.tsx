@@ -4,6 +4,8 @@ import { CommonProps } from "../App.props"
 import Stack from "@mui/material/Stack"
 import Box from "@mui/material/Box"
 import Image from "mui-image"
+import Button from "@mui/material/Button"
+import { navItems } from "../utils/constants"
 const Home = ({ secHeight, navID }: CommonProps) => {
   return (
     <section id={navID}>
@@ -29,7 +31,7 @@ const Home = ({ secHeight, navID }: CommonProps) => {
               }}
             >
               <Typography variant="h3" color={"text.secondary"}>
-                Hi
+                Hi there,
                 <span role="img" aria-label={"hi emoji"} className="wave">
                   {String.fromCodePoint(0x1f44b)}
                 </span>
@@ -47,12 +49,30 @@ const Home = ({ secHeight, navID }: CommonProps) => {
               <Typography variant="h3" color={"text.secondary"}>
                 I'm a Front End Developer
               </Typography>
+              <Button
+                size="large"
+                sx={{
+                  mt: 2,
+                  backgroundImage:
+                    "linear-gradient(to right, #00C0FD 0%, #E70FAA 51%, #00C0FD 100%)",
+                  transition: "0.5s",
+                  backgroundSize: "200% auto",
+                  color: "#fff",
+                  typography: "h6",
+                  "&:hover": {
+                    backgroundPosition: "right center",
+                  },
+                }}
+                href={"#" + navItems[4]}
+              >
+                Contact Me
+              </Button>
             </Box>
             <Box
               sx={{
                 position: "relative",
-                width: { xs: 220, md: 280 },
-                height: { xs: 220, md: 280 },
+                width: { xs: 220, md: 250 },
+                height: { xs: 220, md: 250 },
                 borderRadius: "50%",
                 "&::before,&::after": {
                   content: '" "',

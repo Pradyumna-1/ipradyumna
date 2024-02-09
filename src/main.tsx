@@ -8,11 +8,14 @@ import "@fontsource/inter/400.css"
 import "@fontsource/inter/500.css"
 import "@fontsource/inter/700.css"
 import "@fontsource/iceland"
+import { LazyMotion, domAnimation } from "framer-motion"
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <ColorModeProvider>
-      <App />
+      <LazyMotion features={domAnimation}>
+        <App />
+      </LazyMotion>
     </ColorModeProvider>
   </React.StrictMode>
 )

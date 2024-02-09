@@ -1,7 +1,6 @@
 import { CommonProps } from "../App.props"
 import CardActions from "@mui/material/CardActions"
 import CardContent from "@mui/material/CardContent"
-import CardMedia from "@mui/material/CardMedia"
 import Button from "@mui/material/Button"
 import Grid from "@mui/material/Grid"
 import Typography from "@mui/material/Typography"
@@ -10,36 +9,26 @@ import GitHubIcon from "@mui/icons-material/GitHub"
 import OpenInNewIcon from "@mui/icons-material/OpenInNew"
 import { BlueSpan } from "../styles/styledComponents"
 import MotionCard from "../motion/MotionCard"
-import useMediaQuery from "@mui/material/useMediaQuery"
-import { Theme } from "@mui/material/styles"
-import { Variants } from "framer-motion"
+import { Variants, m } from "framer-motion"
+import Box from "@mui/material/Box"
 
 const Projects = ({ secHeight, navID }: CommonProps) => {
-  const isSmallScreen = useMediaQuery((theme: Theme) =>
-    theme.breakpoints.down("sm")
-  )
-  let variants: Variants = isSmallScreen
-    ? {
-        initial: {},
-        whileInView: {},
-        whileHover: {},
-      }
-    : {
-        initial: { height: 0, opacity: 0, scale: 1 },
-        whileInView: (i) => ({
-          height: "100%",
-          opacity: 1,
-          transition: {
-            type: "spring",
-            bounce: 0.3,
-            delay: i * 0.5,
-          },
-        }),
-        whileHover: {
-          scale: 1.05,
-          transition: { duration: 0.3 },
-        },
-      }
+  let imgVariants: Variants = {
+    initial: { x: -100, opacity: 0 },
+    whileInView: {
+      x: 0,
+      opacity: 1,
+      rotate: [0, 10, 0],
+      transition: { type: "spring" },
+    },
+  }
+  let textVariants: Variants = {
+    initial: { y: 100, opacity: 0 },
+    whileInView: {
+      y: 0,
+      opacity: 1,
+    },
+  }
 
   return (
     <section id={navID}>
@@ -60,33 +49,44 @@ const Projects = ({ secHeight, navID }: CommonProps) => {
             ({ name, description, githubURL, projectURL, imgURL }, i) => (
               <Grid item key={name} xs={12} sm={6} md={4}>
                 <MotionCard
-                  custom={i}
-                  variants={variants}
                   initial="initial"
                   whileInView="whileInView"
-                  whileHover="whileHover"
-                  viewport={{ once: true }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ staggerChildren: 0.5 }}
                   sx={{
                     display: "flex",
+                    height: 1,
                     flexDirection: "column",
-                    justifyContent: "space-between",
                     "&:hover": {
                       boxShadow: (theme) =>
                         `0px 0px 8px 8px ${theme.palette.primary.main}`,
+                      transform: "scale(1.05)",
                     },
                   }}
                 >
-                  <CardMedia
-                    component={"img"}
-                    sx={{ aspectRatio: "320 / 143" }}
-                    image={imgURL}
+                  <Box
+                    component={m.img}
+                    sx={{ width: 1, aspectRatio: "2.2" }}
                     title={name}
+                    alt={name}
+                    src={imgURL}
+                    variants={imgVariants}
                   />
-                  <CardContent>
-                    <Typography gutterBottom variant="h6">
+                  <CardContent sx={{ flexGrow: 1 }}>
+                    <Typography
+                      component={m.h6}
+                      variants={textVariants}
+                      gutterBottom
+                      variant="h6"
+                    >
                       {name}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary">
+                    <Typography
+                      component={m.p}
+                      variants={textVariants}
+                      variant="body2"
+                      color="text.secondary"
+                    >
                       {description}
                     </Typography>
                   </CardContent>
