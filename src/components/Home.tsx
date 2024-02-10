@@ -13,9 +13,8 @@ const Home = ({ secHeight, navID }: CommonProps) => {
         container
         sx={{
           minHeight: secHeight,
-          alignItems: { xs: "baseline", sm: "center" },
-          justifyContent: { xs: "normal", sm: "center" },
-          pt: { xs: 10, sm: 0 },
+          alignItems: "center",
+          justifyContent: "center",
         }}
       >
         <Grid item>

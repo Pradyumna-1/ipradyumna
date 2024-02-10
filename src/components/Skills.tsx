@@ -19,7 +19,7 @@ const Skills = ({ secHeight, navID }: CommonProps) => {
       opacity: 1,
       y: 0,
       x: 0,
-      transition: { delay: i * 0.1, duration: isSmallScreen ? 0.02 : 0.25 },
+      transition: { delay: i * 0.2, duration: isSmallScreen ? 0.02 : 0.5 },
     }),
     whileHover: {
       scale: 1.05,
@@ -59,7 +59,7 @@ const Skills = ({ secHeight, navID }: CommonProps) => {
                 initial="initial"
                 whileInView="whileInView"
                 whileHover="whileHover"
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.5 }}
               >
                 <Box
                   sx={{

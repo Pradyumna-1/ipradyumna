@@ -60,7 +60,7 @@ const Contact = ({ secHeight, navID }: CommonProps) => {
               variants={variants}
               initial="initial"
               whileInView={"whileInView"}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.5 }}
             >
               <ListItemButton
                 component={m.a}
