@@ -1,5 +1,4 @@
 <h1 align="center">Portfolio Website</h1>
-This is the official open source repository of my personal portfolio website. It is built on the latest technologies, trying to put together as much of what I have learned into practice.
 
 <div align="center">
 
@@ -26,8 +25,10 @@ This is the official open source repository of my personal portfolio website. It
 - [Authors](#authors)
 
 ## 🧐 About <a name = "about"></a>
+This is the official open source repository of my personal portfolio website. 
 
-⚡️ My personal portfolio which features some of my github projects as well.\
+⚡️ It is built on the latest technologies, trying to put together as much of what I have learned into practice.\
+⚡️ It features some of my github projects as well.\
 ⚡️ It is fully responsive & user friendly website.\
 ⚡️ It supports both dark mode and light mode.\
 ⚡️ It has five sections like Home, About, Skills, Projects & Contact.
