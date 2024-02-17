@@ -1,6 +1,23 @@
 <h1 align="center">Portfolio Website</h1>
 This is the official open source repository of my personal portfolio website. It is built on the latest technologies, trying to put together as much of what I have learned into practice.
 
+<div align="center">
+
+![GitHub License](https://img.shields.io/github/license/Nilkanth-Patadiya/My-Portfolio?color=blue)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Nilkanth-Patadiya/My-Portfolio?style=flat)
+![GitHub top language](https://img.shields.io/github/languages/top/Nilkanth-Patadiya/My-Portfolio?logo=typescript)
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/Nilkanth-Patadiya/My-Portfolio/main)
+![GitHub Repo stars](https://img.shields.io/github/stars/Nilkanth-Patadiya/My-Portfolio)
+
+</div>
+
+<p align="center" width="100%">
+<img
+  src="https://drive.google.com/uc?id=1NvoYe-6XNbAUDq1FLInP0d4MSMpOjICj"
+  width="75%"
+  height="auto" />
+</p>
+
 ## 📝 Table of Contents
 
 - [About](#about)
@@ -44,6 +61,7 @@ Make sure you have installed all of the following prerequisites on your machine:
    ```
    npm install
    ```
+
    This creates a **node_modules** folder and installs all packages from the package.json file into that folder. You may see a few warnings during this process, but you should not see any errors.
 
 4. In the same command window (or the Command prompt in VS Code), type
@@ -51,6 +69,7 @@ Make sure you have installed all of the following prerequisites on your machine:
    ```
    npm run dev
    ```
+
    The application should then run successfully and you should see a message like **" VITE v4.x.x ready in xxx ms Local: http://localhost:5173/"**.
 
 5. Open **http://localhost:5173** to view it in the browser.

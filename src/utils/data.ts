@@ -21,7 +21,7 @@ export const projectData: Project[] = [
     name: "Portfolio Website",
     description:
       "This is my personal portfolio website which features some of my github projects as well. It is fully responsive & user friendly website, also it supports both dark mode and light mode.",
-    projectURL: "https://vercel.com/",
+    projectURL: "https://nilkanthpatadiya.vercel.app/",
     githubURL: `${githubProfile}/My-Portfolio`,
     imgURL: "/portfolio.png",
   },
