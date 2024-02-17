@@ -23,13 +23,13 @@ export const projectData: Project[] = [
       "This is my personal portfolio website which features some of my github projects as well. It is fully responsive & user friendly website, also it supports both dark mode and light mode.",
     projectURL: "https://vercel.com/",
     githubURL: `${githubProfile}/My-Portfolio`,
-    imgURL: "/portfolio.jpg",
+    imgURL: "/portfolio.png",
   },
   {
     name: "Pokédex",
     description:
       "A pokedex website that allows users to search and view information about various Pokémon characters. A fuzzy search feature is present on the home page. User can view more details by clicking on the particular pokémon.",
-    projectURL: "https://vercel.com/",
+    projectURL: "https://my-pokedex-nilkanth.vercel.app/",
     githubURL: `${githubProfile}/my-pokedex`,
     imgURL: "/pokedex.png",
   },
