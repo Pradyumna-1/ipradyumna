@@ -6,7 +6,7 @@ import Paper from "@mui/material/Paper"
 import Link from "@mui/material/Link"
 import { CommonProps } from "../App.props"
 import { BlueSpan } from "../styles/styledComponents"
-import { aboutData } from "../utils/data"
+import { aboutData, experience } from "../utils/data"
 import SchoolIcon from "@mui/icons-material/School"
 import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium"
 import { Player } from "@lottiefiles/react-lottie-player"
@@ -59,7 +59,18 @@ const About = ({ secHeight, navID }: CommonProps) => {
             whileInView="whileInView"
             viewport={{ once: true }}
           >
-            {aboutData.summary}
+            <b>
+              Hey I'm Nilkanth Patadiya, a Front End Developer with {experience}{" "}
+              of experience in building user-friendly and responsive web
+              applications using React and other modern technologies.
+            </b>{" "}
+            Familiar with Agile methodologies, version control systems and
+            debugging techniques. Since joining{" "}
+            <b>Accenture in December 2020</b>, I have successfully completed
+            multiple projects for clients across various domains and industries,
+            delivering high-quality solutions that meet their needs and
+            expectations. My hobbies include reading, listening to music,
+            gaming, and cycling when I have spare time.
           </Typography>
           <Stack
             direction={{ xs: "column", md: "row" }}

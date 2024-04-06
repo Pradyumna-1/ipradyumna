@@ -43,9 +43,18 @@ export const projectData: Project[] = [
   },
 ]
 
+export const experience = (
+  (new Date().getTime() - new Date("2020-12-04").getTime()) /
+  (1000 * 60 * 60 * 24 * 365.25)
+).toLocaleString("en", {
+  maximumFractionDigits: 2,
+
+  style: "unit",
+  unit: "year",
+  unitDisplay: "long",
+})
+
 export const aboutData: About = {
-  summary:
-    "Hey I'm Nilkanth Patadiya, a Front End Developer with 3 years of experience in building user-friendly and responsive web applications using React and other modern technologies. Familiar with Agile methodologies, version control systems and debugging techniques. Since joining Accenture in December 2020, I have successfully completed multiple projects for clients across various domains and industries, delivering high-quality solutions that meet their needs and expectations. My hobbies include reading, listening to music, gaming, and cycling when I have spare time.",
   badges: [
     {
       imgURL: "/aws-certified-cloud-practitioner.png",
