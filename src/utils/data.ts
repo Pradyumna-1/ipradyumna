@@ -18,12 +18,12 @@ export const skillData: Skill[] = [
 
 export const projectData: Project[] = [
   {
-    name: "Portfolio Website",
+    name: "Nilkanthmart | E-Commerce App",
     description:
-      "This is my personal portfolio website which features some of my github projects as well. It is fully responsive & user friendly website, also it supports both dark mode and light mode.",
-    projectURL: "https://nilkanthpatadiya.vercel.app/",
-    githubURL: `${githubProfile}/My-Portfolio`,
-    imgURL: "/portfolio.png",
+      "It is an e-commerce web application made using Next.js, Material UI and Redux Toolkit. Customers can browse products, add items to the cart, adjust quantities, remove products, apply coupon codes, place orders, and view order history.",
+    projectURL: "https://nilkanthmart-ecommerce.vercel.app/",
+    githubURL: `${githubProfile}/ecommerce-app`,
+    imgURL: "/ecommerce-app.png",
   },
   {
     name: "Pokédex",
@@ -39,7 +39,7 @@ export const projectData: Project[] = [
       "Pizzeria is a MEAN Stack web application, where users order pizza online. Users can choose from the existing menu and order pizzas, also they can also customize their pizza by choosing ingredients.",
     projectURL: "",
     githubURL: `${githubProfile}/Pizzeria`,
-    imgURL: "pizzeria.jpg",
+    imgURL: "/pizzeria.jpg",
   },
 ]
 
@@ -48,7 +48,6 @@ export const experience = (
   (1000 * 60 * 60 * 24 * 365.25)
 ).toLocaleString("en", {
   maximumFractionDigits: 2,
-
   style: "unit",
   unit: "year",
   unitDisplay: "long",
