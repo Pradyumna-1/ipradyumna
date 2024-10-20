@@ -63,8 +63,9 @@ const Skills = ({ secHeight, navID }: CommonProps) => {
               >
                 <Box
                   sx={{
-                    height: 80,
+                    height: 75,
                     width: 1,
+                    p: 1,
                     display: "flex",
                     justifyContent: "center",
                   }}

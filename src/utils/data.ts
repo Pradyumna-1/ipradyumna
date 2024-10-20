@@ -2,18 +2,18 @@ import { About, Project, Skill } from "../App.props"
 import { githubProfile } from "./constants"
 
 export const skillData: Skill[] = [
+  { name: "React", imgURL: "/logos_react.svg" },
+  { name: "Next.js", imgURL: "/logo_next.svg" },
+  { name: "Vue", imgURL: "/vuedotjs-color.svg" },
+  { name: "Typescript", imgURL: "/icons-typescript.svg" },
+  { name: "Redux", imgURL: "/redux-color.svg" },
+  { name: "React Query", imgURL: "/react-query.svg" },
+  { name: "Material UI", imgURL: "/logo_mui.svg" },
+  { name: "Bootstrap", imgURL: "/logos_bootstrap.svg" },
+  { name: "Git", imgURL: "/logos_git.svg" },
   { name: "HTML", imgURL: "/icons_html.svg" },
   { name: "CSS", imgURL: "/icons_css.svg" },
   { name: "Javascript", imgURL: "/icons_js.svg" },
-  { name: "Typescript", imgURL: "/icons-typescript.svg" },
-  { name: "React", imgURL: "/logos_react.svg" },
-  { name: "Next.js", imgURL: "/logo_next.svg" },
-  { name: "Material UI", imgURL: "/logo_mui.svg" },
-  { name: "Bootstrap", imgURL: "/logos_bootstrap.svg" },
-  { name: "React Query", imgURL: "/react-query.svg" },
-  { name: "Axios", imgURL: "/axios-logo.png" },
-  { name: "Apache Echarts", imgURL: "/echarts-logo.svg" },
-  { name: "Git", imgURL: "/logos_git.svg" },
 ]
 
 export const projectData: Project[] = [
