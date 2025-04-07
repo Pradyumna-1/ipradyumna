@@ -8,7 +8,6 @@ import LocationOnIcon from "@mui/icons-material/LocationOn"
 import EmailIcon from "@mui/icons-material/Email"
 import { emailID, linkedInProfile, myAddress } from "../utils/constants"
 import { BlueSpan, CustomAvatar } from "../styles/styledComponents"
-import Footer from "./Footer"
 import { Variants, m } from "framer-motion"
 import ListItemButton from "@mui/material/ListItemButton"
 import List from "@mui/material/List"
@@ -135,9 +134,6 @@ const Contact = ({ secHeight, navID }: CommonProps) => {
               </ListItemButton>
             </List>
           </Grid>
-        </Grid>
-        <Grid item xs={12} sx={{ height: "fit-content" }}>
-          <Footer />
         </Grid>
       </Grid>
     </section>

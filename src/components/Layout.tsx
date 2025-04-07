@@ -38,6 +38,7 @@ import Drawer from "@mui/material/Drawer"
 import Container from "@mui/material/Container"
 import Fab from "@mui/material/Fab"
 import useMediaQuery from "@mui/material/useMediaQuery"
+import Footer from "./Footer"
 
 const Layout = () => {
   const navIcons = [
@@ -51,6 +52,7 @@ const Layout = () => {
   const [mobileOpen, setMobileOpen] = React.useState(false)
   const { toggleColorMode } = useColorMode()
   const theme = useTheme()
+  const isDarkTheme = theme.palette.mode === "dark"
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"))
   const appBarRef = React.useRef(null)
 
@@ -62,7 +64,7 @@ const Layout = () => {
   }
   return (
     <Box sx={{ width: 1 }}>
-      {/*Navigation For small screens */}
+      {/*Sidebar Navigation For small screens */}
       <Box component="nav">
         <Drawer
           variant="temporary"
@@ -105,7 +107,7 @@ const Layout = () => {
         </Drawer>
       </Box>
       <Stack sx={{ width: 1 }}>
-        {/* Navigation For large screens */}
+        {/* Header Navigation For large screens */}
         <AppBar
           position="sticky"
           color="transparent"
@@ -165,19 +167,21 @@ const Layout = () => {
                   <GitHubIcon />
                 </IconButton>
               </LightTooltip>
-              <LightTooltip title="Toggle mode">
+              <LightTooltip
+                title={`Switch to ${isDarkTheme ? "light" : "dark"} theme`}
+              >
                 <IconButton color="primary" onClick={toggleColorMode}>
-                  {theme.palette.mode === "dark" ? (
-                    <DarkModeOutlinedIcon />
-                  ) : (
-                    <LightModeIcon />
-                  )}
+                  {isDarkTheme ? <DarkModeOutlinedIcon /> : <LightModeIcon />}
                 </IconButton>
               </LightTooltip>
             </Stack>
           </Toolbar>
         </AppBar>
-        <Container sx={{ "&>section": { scrollMarginTop: `${height}px` } }}>
+        {/* Main Content */}
+        <Container
+          maxWidth={"xl"}
+          sx={{ "&>section": { scrollMarginTop: `${height}px` } }}
+        >
           <Home secHeight={secHeight} navID={navItems[0]} />
           <About secHeight={secHeight} navID={navItems[1]} />
           <Skills secHeight={secHeight} navID={navItems[2]} />
@@ -194,6 +198,8 @@ const Layout = () => {
             </Fab>
           </ScrollToTop>
         </Container>
+        {/* Footer */}
+        <Footer />
       </Stack>
     </Box>
   )
