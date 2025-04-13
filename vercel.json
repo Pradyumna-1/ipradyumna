@@ -1,0 +1,14 @@
+{
+    "builds": [
+      {
+        "src": "package.json",
+        "use": "@vercel/node",
+        "config": {
+          "includeFiles": ["node_modules/**"]
+        }
+      }
+    ],
+    "scripts": {
+      "build": "chmod +x node_modules/.bin/tsc && chmod +x node_modules/.bin/vite && tsc && vite build"
+    }
+  }
